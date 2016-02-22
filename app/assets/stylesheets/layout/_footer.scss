@@ -1,1 +1,26 @@
 // Your footer style
+/* FOOTER */
+#f {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #2f2f2f;
+  color: white;
+}
+
+#f h5 {
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+#f i {
+  font-size: 45px;
+  margin: 15px;
+}
+
+#f a {
+  color: #b9b9b9;
+}
+
+#f a:hover {
+  color: #03C9A9;
+}

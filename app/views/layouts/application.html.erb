@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>TODO</title>
     <%= csrf_meta_tags %>
-    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <title>Benchy - Your competition monitoring tool</title>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
+
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
+
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
+
+
