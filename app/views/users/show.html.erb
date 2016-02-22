@@ -1,0 +1,71 @@
+<div class="page-wrapper">
+  <div class="page-container page-container-responsive row-space-top-4 row-space-8r">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="user-div">
+            <table>
+              <tbody>
+                <% if @user.first_name && @user.last_name %>
+                  <tr>
+                    <td class="field-name"><p><strong>Nom: </strong></p></td>
+                    <td><p><%= @user.first_name %> <%= @user.last_name %></p></td>
+                  </tr>
+                <% end %>
+                <% if @user.company_name %>
+                  <tr>
+                      <td class="field-name"><p><strong>Nom de votre entreprise: </strong></p></td>
+                      <td><p><%= @user.company_name %></p></td>
+                  </tr>
+                <% end %>
+                <% if @user.company_url %>
+                  <tr>
+                    <td class="field-name"><p><strong>Site de votre entreprise: </strong></p></td>
+                    <td><p><%= @user.company_url %></p></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <% if @user === current_user %>
+              <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get", class: "btn btn-home btn-center" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-7">
+          <div class="competitor-div">
+            <h1><%= "Bonjour, je m'appelle #{@user.first_name} !" %></h1>
+            <h3>Voici mes concurrents</h3>
+              <table>
+                <body>
+                  <% if @user.company_url %>
+                    <% @user.competitors.each do |competitor| %>
+                      <tr>
+                        <td>
+                            <p><%= competitor.name %></p>
+                        </td>
+                        <td>
+                          <%= link_to "Voir", competitor_path(competitor), method: "get", class: "btn btn-default Un" %>
+                        </td>
+                        <% if @user === current_user %>
+                          <td>
+                            <%= link_to "Modifier", edit_competitor_path(competitor), method: "get", class: "btn btn-default" %>
+                          </td>
+                          <td>
+                            <%= link_to "Supprimer", competitor_path(competitor), method: "delete", class: "btn btn-default"  %>
+                          </td>
+                        <% end %>
+                      </tr>
+                    <% end %>
+                  <% end %>
+                </body>
+              </table>
+          </div>
+        </div>
+        <div class="text-center">
+            <%= link_to "Ajouter une activité", new_competitor_path, method: "get", class: "btn btn-home" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
