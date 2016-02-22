@@ -11,10 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222151922) do
+ActiveRecord::Schema.define(version: 20160222152725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ads", force: :cascade do |t|
+    t.string   "url"
+    t.integer  "competitor_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "ads", ["competitor_id"], name: "index_ads_on_competitor_id", using: :btree
+
+  create_table "competitors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.text     "scraping_parameters"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "dashboards", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "dashboards", ["user_id"], name: "index_dashboards_on_user_id", using: :btree
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "competitor_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "follows", ["competitor_id"], name: "index_follows_on_competitor_id", using: :btree
+  add_index "follows", ["user_id"], name: "index_follows_on_user_id", using: :btree
+
+  create_table "pins", force: :cascade do |t|
+    t.integer  "dashboard_id"
+    t.integer  "ad_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "pins", ["ad_id"], name: "index_pins_on_ad_id", using: :btree
+  add_index "pins", ["dashboard_id"], name: "index_pins_on_dashboard_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,9 +75,19 @@ ActiveRecord::Schema.define(version: 20160222151922) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "company_url"
+    t.string   "company_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "ads", "competitors"
+  add_foreign_key "dashboards", "users"
+  add_foreign_key "follows", "competitors"
+  add_foreign_key "follows", "users"
+  add_foreign_key "pins", "ads"
+  add_foreign_key "pins", "dashboards"
 end
