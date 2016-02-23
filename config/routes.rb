@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :users, only: [:show, :edit, :update]
   resources :competitors, only: [:new, :create, :edit, :update]
-  resources :follows, only: [:create, :destroy]
+  resources :follows, only: [:new, :create, :destroy]
   resources :pins, only: [:new, :create, :destroy]
   resources :ads, only: [:index, :show]
   resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update]
