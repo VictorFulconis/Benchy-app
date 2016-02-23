@@ -47,7 +47,7 @@ class DashboardsController < ApplicationController
   end
 
   def set_dashboard
-    @dashboard  = Dashboard.find(params[:id])
+    @dashboard = current_user.dashboards.find(params[:id])
   end
 
 end

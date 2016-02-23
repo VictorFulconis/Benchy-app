@@ -35,6 +35,9 @@
         <div class="col-xs-7">
 
         <div class="text-center">
+
+            <%= link_to "Add a competitor to follow", new_follow_path, method: "get", class: "btn btn-home" %>
+
             <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-home" %>
             <ul>
               <% @user.dashboards.each do |dashboard| %>
