@@ -11,3 +11,4 @@ class Ad < ActiveRecord::Base
     end
   end
 end
+
