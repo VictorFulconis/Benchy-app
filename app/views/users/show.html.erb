@@ -33,37 +33,14 @@
         </div>
         <div class="col-xs-1"></div>
         <div class="col-xs-7">
-          <div class="competitor-div">
-            <h1><%= "Bonjour, je m'appelle #{@user.first_name} !" %></h1>
-            <h3>Voici mes concurrents</h3>
-              <table>
-                <body>
-                  <% if @user.company_url %>
-                    <% @user.competitors.each do |competitor| %>
-                      <tr>
-                        <td>
-                            <p><%= competitor.name %></p>
-                        </td>
-                        <td>
-                          <%= link_to "Voir", competitor_path(competitor), method: "get", class: "btn btn-default Un" %>
-                        </td>
-                        <% if @user === current_user %>
-                          <td>
-                            <%= link_to "Modifier", edit_competitor_path(competitor), method: "get", class: "btn btn-default" %>
-                          </td>
-                          <td>
-                            <%= link_to "Supprimer", competitor_path(competitor), method: "delete", class: "btn btn-default"  %>
-                          </td>
-                        <% end %>
-                      </tr>
-                    <% end %>
-                  <% end %>
-                </body>
-              </table>
-          </div>
-        </div>
+
         <div class="text-center">
-            <%= link_to "Ajouter une activité", new_competitor_path, method: "get", class: "btn btn-home" %>
+            <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-home" %>
+            <ul>
+              <% @user.dashboards.each do |dashboard| %>
+                <li> <%= dashboard.name %></li>
+              <% end %>
+            </ul>
         </div>
       </div>
     </div>

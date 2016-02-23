@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   get 'pages/home'
   devise_for :users, controllers: {registrations: "registrations"}
   root to: "pages#home"
-  resources :users, only:[:show, :edit, :update]
-  resources :competitors, only:[:new, :create, :edit, :update]
-  resources :follow, only:[:create, :delete]
-  resources :pin, only:[:create, :delete]
-  resources :ad, only:[:index, :show]
-  resources :dashboard, only:[:new, :create, :show, :delete, :edit, :update]
+  resources :users, only: [:show, :edit, :update]
+  resources :competitors, only: [:new, :create, :edit, :update]
+  resources :follows, only: [:create, :delete]
+  resources :pins, only: [:create, :delete]
+  resources :ads, only: [:index, :show]
+  resources :dashboards, only: [:new, :create, :show, :delete, :edit, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
