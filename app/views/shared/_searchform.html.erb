@@ -1,0 +1,8 @@
+<div class="search-bar">
+  <div class="form-inline">
+    <%= simple_form_for :search, url: ads_path, method: 'get' do |f| %>
+      <%= f.input :name, prompt: "Entrez un concurrent", label: false%>
+      <%= f.submit "Trouver", class: "btn btn-home", label: false %>
+    <% end %>
+  </div>
+</div>

@@ -4,10 +4,10 @@ class Ad < ActiveRecord::Base
   has_many :users, through: :competitor
 
   def self.search(query)
-    if query[:name] == ""
+    if query.blank?
       all
     else
-      where("name = ?", query[:name])
+      joins(:competitor).where("competitors.name ilike ?", "%#{query}%")
     end
   end
 end
