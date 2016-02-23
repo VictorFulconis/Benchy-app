@@ -1,0 +1,35 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <div class="container form">
+      <div class="row">
+        <div class="col-xs-6 col-sm-3 col-sm-offset-3">
+            <!-- Image div -->
+              <div>
+                <%= cl_image_tag(@ad.url, width: 250, height: 100, crop: :pad) %>
+              </div>
+            <!-- text div -->
+              <div>
+                <h4><%= @ad.competitor.name.capitalize %></h4>
+                <h4><%= @ad.created_at.to_date %></h4>
+              </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-sm-offset-3">
+          <ul>
+            <% current_user.dashboards.each do |dashboard| %>
+              <li> <%= dashboard.name %>
+                <%= simple_form_for [@ad, @pin] do |f| %>
+                  <%= f.error_notification %>
+                  <%= f.hidden_field :dashboard_id, value: dashboard.id %>
+                  <%= f.button :submit, class: "btn btn-primary", style: "width: 100%", value: "Pin it" %>
+                <% end %>
+              </li>
+            <% end %>
+
+
+          </ul>
+          <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-home" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
