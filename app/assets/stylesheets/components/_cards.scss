@@ -1,0 +1,16 @@
+.feed-container .elements-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.feed-container button {
+  border: none;
+  background-color: white;
+}
+
+.feed-container .ad-card {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  width: 275px;
+}
