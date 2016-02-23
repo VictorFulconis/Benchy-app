@@ -5,6 +5,7 @@
   padding-top: 15px;
   padding-bottom: 25px;
   margin: 5px;
+  background-color: white;
 }
 
 .price-table .p-head {
@@ -18,11 +19,12 @@
 
 .price-table .p-body .features li {
   color: #333333;
-  border-bottom: 2px solid #ccc;
-  padding: 24px 0px;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0px;
   margin: 0;
   letter-spacing: 1px;
 }
+
 
 .p-body .price .detail {
   font-weight: 700;
@@ -37,6 +39,11 @@
   position: relative;
   bottom: 10px;
   font-weight: 700;
+}
+
+#profile_table {
+  margin-top: 2em;
+
 }
 
 ul {
