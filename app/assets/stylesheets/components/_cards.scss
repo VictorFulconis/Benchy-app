@@ -1,3 +1,4 @@
+
 .feed-container .elements-div {
   display: flex;
   justify-content: space-around;
@@ -13,4 +14,12 @@
   border-radius: 5px;
   margin: 10px;
   width: 275px;
+
+.competitor-card {
+  height: 5em;
+  background-color: white;
+  position: relative;
+  margin-top: 2em;
+  border-radius: 5px;
+  display: flex;
 }
