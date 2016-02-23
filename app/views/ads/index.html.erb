@@ -11,7 +11,7 @@
         <% @ads.each do |ad| %>
           <div class="col-xs-6 col-sm-3">
 <!-- Card -->
-            <div>
+            <div data-toggle="modal" data-target="#sign-up">
 <!-- Image div -->
               <div>
                 <%= cl_image_tag(ad.url, width: 250, height: 100, crop: :pad) %>
