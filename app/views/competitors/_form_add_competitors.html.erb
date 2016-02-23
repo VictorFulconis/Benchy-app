@@ -1,0 +1,16 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <div class="container" >
+      <div class="row" id="add_competitor">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= simple_form_for (@competitor) do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :name, as: :string, value: :name %>
+            <%= f.input :url, as: :string, value: :url %>
+            <%= f.button :submit, class: "btn btn-conf btn-green aligncenter" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
