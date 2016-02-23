@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :follows
   has_many :dashboards
+  has_many :competitors, through: :follows
+  has_many :ads, through: :competitors
 end
