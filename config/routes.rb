@@ -4,16 +4,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :users, only: [:show, :edit, :update]
   resources :competitors, only: [:new, :create, :edit, :update]
-<<<<<<< HEAD
-  resources :follows, only: [:create, :destroy]
+  resources :follows, only: [:new, :create, :destroy]
   resources :ads, only: [:index, :show] do
     resources :pins, only: [:new, :create, :destroy]
   end
-=======
-  resources :follows, only: [:new, :create, :destroy]
-  resources :pins, only: [:new, :create, :destroy]
-  resources :ads, only: [:index, :show]
->>>>>>> master
   resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
