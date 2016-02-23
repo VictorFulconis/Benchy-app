@@ -7,7 +7,12 @@ class CompetitorsController < ApplicationController
   def create
     @competitor = Competitor.new(competitor_params)
     if @competitor.save
-      redirect_to user_path(current_user)
+       @follow = Follow.new(competitor_id: @competitor.id, user_id: current_user.id)
+       if @follow.save
+        redirect_to user_path(current_user)
+      else
+        render :new
+      end
     else
       render :new
     end
@@ -24,7 +29,6 @@ class CompetitorsController < ApplicationController
     @competitor.delete
     redirect_to root_path
   end
-
 
 private
 

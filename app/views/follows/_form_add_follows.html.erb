@@ -3,9 +3,9 @@
     <div class="container" >
       <div class="row" id="add_competitor">
         <div class="col-xs-8 col-xs-offset-2">
-          <%= simple_form_for (@competitor) do |f| %>
+          <%= simple_form_for (@follow) do |f| %>
             <%= f.error_notification %>
-             <%= f.input :name, collection: Competitor.all, label: "Select a competitor" %>
+             <%= f.input :competitor_id, collection: Competitor.all, label: "Select a competitor" %>
             <%= f.button :submit, class: "btn btn-conf btn-green aligncenter", label: "Save" %>
           <% end %>
         </div>
