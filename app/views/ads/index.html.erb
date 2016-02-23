@@ -1,37 +1,56 @@
 <div class="page-wrapper">
-<!-- Timeline container -->
-  <div>
-  </div>
-<!-- End of Timeline container -->
-<!-- Ads container -->
-  <div>
-<!-- Bootstrap grid -->
-    <div class="container">
-      <div class="row">
-        <% @ads.each do |ad| %>
-          <div class="col-xs-6 col-sm-3">
-<!-- Card -->
-            <div>
-<!-- Image div -->
-              <div>
-                <%= cl_image_tag(ad.url, width: 250, height: 100, crop: :pad) %>
-              </div>
-<!-- text div -->
-              <div>
-                <h4><%= ad.competitor.name.capitalize %></h4>
-                <h4><%= ad.created_at.to_date %></h4>
-              </div>
-<!-- Add button div -->
-              <div>
-                <%= link_to "+", new_ad_pin_path(ad) %>
+  <div class="page-container">
+
+    <div class="timeline-container">
+    </div>
+
+    <div class="feed-container">
+      <div class="container">
+        <div class="row">
+          <% @ads.each do |ad| %>
+            <div class="col-xs-6 col-sm-3">
+              <div class="ad-card" >
+
+                <button class="image-div" data-toggle="modal" data-target="#ad-detail">
+                  <%= cl_image_tag(ad.url, width: 250, height: 100, crop: :pad) %>
+                </button>
+
+                <div class="elements-div">
+                  <button class="text-div" data-toggle="modal" data-target="#ad-detail">
+                    <h4><%= ad.competitor.name.capitalize %></h4>
+                    <h4><%= ad.created_at.to_date %></h4>
+                  </button>
+                  <div class="pin-div">
+                    <%= link_to "+", new_ad_pin_path(ad) %>
+                  </div>
+                </div>
+
               </div>
             </div>
-<!-- End of card -->
-          </div>
-        <% end %>
+
+            <div class="modal fade" id="ad-detail">
+              <div class="ad-card-modal" >
+
+                <div class="image-div">
+                  <%= cl_image_tag(ad.url, width: 750, height: 300, crop: :fit) %>
+                </div>
+
+                <div class="elements-div">
+                  <div class="text-div">
+                    <h4><%= ad.competitor.name.capitalize %></h4>
+                    <h4><%= ad.created_at.to_date %></h4>
+                  </div>
+                  <div class="pin-div">
+                    <%= link_to "+", new_ad_pin_path(ad) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+        </div>
       </div>
     </div>
-<!-- End of Bootstrap grid -->
+
   </div>
-<!-- End of Ads container -->
 </div>
