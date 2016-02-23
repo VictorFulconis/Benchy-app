@@ -36,12 +36,12 @@
 
         <div class="text-center">
 
-            <%= link_to "Add a competitor to follow", new_follow_path, method: "get", class: "btn btn-home" %>
+            <%= link_to "Add a competitor to follow", new_follow_path, method: "get", class: "btn btn-conf-2 btn-green" %>
 
-            <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-home" %>
+            <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-conf-2 btn-green" %>
             <ul>
               <% @user.dashboards.each do |dashboard| %>
-                <li> <%= dashboard.name %> <%= link_to "Modifier", edit_dashboard_path(dashboard), method: "get", class: "btn btn-default" %> <%= link_to "Supprimer", dashboard_path(dashboard), method: "delete", class: "btn btn-default"  %></li>
+                <li> <%= dashboard.name %> <%= link_to "Modifier", edit_dashboard_path(dashboard), method: "get", class: "btn btn-conf-2 btn-green" %> <%= link_to "Supprimer", dashboard_path(dashboard), method: "delete", class: "btn btn-conf-2 btn-green"  %></li>
               <% end %>
             </ul>
         </div>
