@@ -1,0 +1,39 @@
+<div class="page-wrapper">
+<!-- Timeline container -->
+  <div>
+  </div>
+<!-- End of Timeline container -->
+<!-- Ads container -->
+  <div>
+<!-- Bootstrap grid -->
+    <div class="container">
+      <div class="row">
+        <% @ads.each do |ad| %>
+          <div class="col-xs-6 col-sm-3">
+<!-- Card -->
+            <div>
+<!-- Image div -->
+              <div>
+                <%= cl_image_tag(ad.url, width: 250, height: 100, crop: :fill) %>
+              </div>
+<!-- text div -->
+              <div>
+                <h4><%= ad.competitor.name.capitalize %></h4>
+                <h4><%= ad.created_at.to_date %></h4>
+              </div>
+<!-- Add button div -->
+              <div>
+                <%= simple_form_for (@pin) do |f| %>
+
+                <% end %>
+              </div>
+            </div>
+<!-- End of card -->
+          </div>
+        <% end %>
+      </div>
+    </div>
+<!-- End of Bootstrap grid -->
+  </div>
+<!-- End of Ads container -->
+</div>
