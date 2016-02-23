@@ -1,38 +1,38 @@
 <div class="page-wrapper">
   <div class="page-container page-container-responsive row-space-top-4 row-space-8r">
-    <div class="container">
+    <div class="container ptb">
       <div class="row">
-        <div class="col-xs-4">
+       <div class="col-xs-12 col-md-3">
           <div class="user-div">
-            <table>
-              <tbody>
-                <% if @user.first_name && @user.last_name %>
-                  <tr>
-                    <td class="field-name"><p><strong>Nom: </strong></p></td>
-                    <td><p><%= @user.first_name %> <%= @user.last_name %></p></td>
-                  </tr>
+
+              <div class="price-table">
+              <div class="p-head centered">
+               <% if @user.first_name && @user.last_name %>
+                    <p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+                  <% end %>
+              </div>
+              <div class="p-body centered">
+                <ul class="features">
+                  <li>
+                    <% if @user.company_name %>
+                      <p><%= @user.company_name %></p>
+                    <% end %>
+                  </li>
+                  <li>
+                    <% if @user.company_url %>
+                        <p> <%= @user.company_url %></p>
+                    <% end %>
+                  </li>
+                </ul>
+                <% if @user === current_user %>
+                  <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get", class: "btn btn-conf-2 btn-green" %>
                 <% end %>
-                <% if @user.company_name %>
-                  <tr>
-                      <td class="field-name"><p><strong>Nom de votre entreprise: </strong></p></td>
-                      <td><p><%= @user.company_name %></p></td>
-                  </tr>
-                <% end %>
-                <% if @user.company_url %>
-                  <tr>
-                    <td class="field-name"><p><strong>Site de votre entreprise: </strong></p></td>
-                    <td><p><%= @user.company_url %></p></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-            <% if @user === current_user %>
-              <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get", class: "btn btn-home btn-center" %>
-            <% end %>
+              </div><!--/p-body-->
+          </div><!--/price-table-->
           </div>
         </div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-7">
+        <div class="col-md-1"></div>
+        <div class="col-xs-12 col-md-8">
 
         <div class="text-center">
 
