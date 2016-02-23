@@ -38,7 +38,7 @@
             <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-home" %>
             <ul>
               <% @user.dashboards.each do |dashboard| %>
-                <li> <%= dashboard.name %></li>
+                <li> <%= dashboard.name %> <%= link_to "Modifier", edit_dashboard_path(dashboard), method: "get", class: "btn btn-default" %> <%= link_to "Supprimer", dashboard_path(dashboard), method: "delete", class: "btn btn-default"  %></li>
               <% end %>
             </ul>
         </div>

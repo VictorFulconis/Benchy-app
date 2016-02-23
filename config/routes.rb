@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :users, only: [:show, :edit, :update]
   resources :competitors, only: [:new, :create, :edit, :update]
-  resources :follows, only: [:create, :delete]
-  resources :pins, only: [:create, :delete]
+  resources :follows, only: [:create, :destroy]
+  resources :pins, only: [:create, :destroy]
   resources :ads, only: [:index, :show]
-  resources :dashboards, only: [:new, :create, :show, :delete, :edit, :update]
+  resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -7,8 +7,8 @@
             <%= f.error_notification %>
             <h1 class="text-center"><%= "Détails du tableau" %></h1>
             <%= f.input :name, as: :string, placeholder: "Nom de mon concurrent" %>
-            <%= f.hidden_field :user_id, value: current_user %>
-            <%= f.button :submit, class: "btn btn-primary", class: "btn btn-primary", style: "width: 100%", value: "Créer un tableau" %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.button :submit, class: "btn btn-primary", style: "width: 100%", value: "Créer un tableau" %>
           <% end %>
         </div>
       </div>
