@@ -5,8 +5,10 @@
         <div class="col-xs-8 col-xs-offset-2">
           <%= simple_form_for (@competitor) do |f| %>
             <%= f.error_notification %>
-            <%= f.input :name, as: :string, value: :name %>
+             <%= f.input :name, collection: Competitor.all, label: "Select a competitor" %>
+            <%= f.input :name, as: :string, value: :name, label: "Add a new competitor"%>
             <%= f.input :url, as: :string, value: :url %>
+
             <%= f.button :submit, class: "btn btn-conf btn-green aligncenter" %>
           <% end %>
         </div>
