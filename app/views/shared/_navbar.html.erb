@@ -11,12 +11,23 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
     <!-- Search form -->
-      <form action="" class="navbar-wagon-search">
+      <!-- <form action="" class="navbar-wagon-search">
         <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
         <button type="submit" class="navbar-wagon-search-btn">
           <i class="fa fa-search"></i>
         </button>
-      </form>
+      </form> -->
+
+      <div class="search-bar">
+        <div class="form-inline">
+          <%= form_tag ads_path, method: 'get', class: "navbar-wagon-search" do %>
+            <%= text_field_tag :search, @search, placeholder: "Entrez un concurrent", class: "navbar-wagon-search-input" %>
+            <%= button_tag type: "submit", class: "btn btn-home navbar-wagon-search-btn" do %>
+              <i class="fa fa-search"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
