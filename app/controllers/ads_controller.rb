@@ -1,9 +1,18 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show]
 
+
+
   def index
-    @ads = current_user.ads
     @pin = Pin.new
+    if params[:search]
+      @search = params[:search]
+      if params[:search] != ""
+        @activities = current_user.ads.search(params[:search])
+      end
+    else
+      @ads = current_user.ads
+    end
   end
 
   def show
