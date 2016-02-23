@@ -16,6 +16,6 @@ class AdsController < ApplicationController
   end
 
   def ad_params
-    params.require(:ad).permit(:url, :name)
+    params.require(:ad).permit(:url, :competitor_id)
   end
 end

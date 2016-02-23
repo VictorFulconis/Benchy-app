@@ -14,7 +14,7 @@
             <div>
 <!-- Image div -->
               <div>
-                <%= cl_image_tag(ad.url, width: 250, height: 100, crop: :fill) %>
+                <%= cl_image_tag(ad.url, width: 250, height: 100, crop: :pad) %>
               </div>
 <!-- text div -->
               <div>
@@ -23,9 +23,7 @@
               </div>
 <!-- Add button div -->
               <div>
-                <%= simple_form_for (@pin) do |f| %>
-
-                <% end %>
+                <%= link_to "+", new_pin_path, method: "get" %>
               </div>
             </div>
 <!-- End of card -->
