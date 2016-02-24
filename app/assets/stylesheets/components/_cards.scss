@@ -1,9 +1,4 @@
 
-.feed-container .elements-div {
-  display: flex;
-  justify-content: space-around;
-}
-
 .feed-container button {
   border: none;
   background-color: white;
@@ -14,6 +9,94 @@
   border-radius: 5px;
   margin: 10px;
   width: 275px;
+  height: 200px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  button {
+    border: none;
+  }
+  .image-div {
+    margin-left: 12.5px;
+    border-bottom: 0.5px dashed grey;
+  }
+  .elements-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  width: 275px;
+  }
+  .text-div {
+    text-align: left;
+    width: 137px;
+    height: 50px;
+    p {
+      font-size: 12px;
+      line-height: 1px;
+    }
+    h5 {
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+  .pin-btn {
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: white;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: grey;
+    }
+  }
+}
+
+
+.feed-container .ad-card-modal {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-top: 100px;
+  width: 850px;
+  height: 400px;
+  background-color: white;
+  .image-div {
+    border-bottom: 0.5px dashed grey;
+  }
+  .elements-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  width: 850px;
+  }
+  .text-div {
+    text-align: left;
+    width: 425px;
+    height: 100px;
+    p {
+      font-size: 12px;
+      line-height: 1px;
+    }
+    h5 {
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+  .pin-btn {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: grey;
+    }
+  }
 }
 
 .competitor-container {
