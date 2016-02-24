@@ -20,7 +20,7 @@ class PinsController < ApplicationController
   def destroy
     @dashboard = @pin.dashboard
     @pin.delete
-    redirect_to dashboards(@dashboard)
+    redirect_to dashboard_path(@dashboard)
   end
 
   private
