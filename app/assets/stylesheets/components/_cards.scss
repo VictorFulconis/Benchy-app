@@ -3,8 +3,9 @@
 }
 
 .feed-container .ad-card {
-  border: 1px solid black;
+  border: 1px solid rgb(230, 230, 230);
   border-radius: 5px;
+  box-shadow: 1px 1px 2px rgba(100,100, 100, 0.2);
   margin: 15px;
   width: 275px;
   height: 200px;
@@ -15,10 +16,11 @@
   }
   button {
     border: none;
+    background-color: white;
   }
   .image-div {
     margin-left: 12.5px;
-    border-bottom: 0.5px dashed grey;
+    border-bottom: 0.5px dashed rgb(230, 230, 230);
   }
   .elements-div {
   display: flex;
@@ -55,14 +57,15 @@
 
 
 .feed-container .ad-card-modal {
-  border: 1px solid black;
+  border: 1px solid rgb(230, 230, 230);
   border-radius: 20px;
   margin-top: 100px;
   width: 850px;
   height: 400px;
   background-color: white;
+  box-shadow: 1px 1px 2px rgba(100,100, 100, 0.2);
   .image-div {
-    border-bottom: 0.5px dashed grey;
+    border-bottom: 0.5px dashed rgb(230, 230, 230);
   }
   .elements-div {
   display: flex;
@@ -91,6 +94,7 @@
     border-radius: 50%;
     color: white;
     transition: color 0.2s ease-in-out;
+    border: none;
     &:hover {
       color: grey;
     }
