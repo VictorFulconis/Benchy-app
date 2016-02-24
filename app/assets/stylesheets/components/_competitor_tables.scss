@@ -1,0 +1,31 @@
+
+.competitor-table {
+  border: 2px solid #5a5a5a;
+  border-radius: 25px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  margin: 5px;
+  background-color: white;
+}
+
+.header-competitor {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.competitor-table .p-head {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 80px;
+  border-bottom: 2px solid #ccc;
+}
+
+.competitor-table .p-body .features li {
+  color: #333333;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0px;
+  margin: 0;
+  letter-spacing: 1px;
+}

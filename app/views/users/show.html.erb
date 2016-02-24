@@ -1,63 +1,100 @@
 <div class="page-wrapper">
   <div class="page-container page-container-responsive row-space-top-4 row-space-8r">
-    <div class="container ptb">
+    <div class="container">
       <div class="row">
-       <div class="col-xs-12 col-md-3">
-          <div class="user-div">
-
-              <div class="price-table">
-              <div class="p-head centered">
-               <% if @user.first_name && @user.last_name %>
-                    <p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
-                  <% end %>
+         <div class="text-center">
+            <div class="col-xs-12 col-md-12">
+              <div class="row header-competitor">
+                <%= link_to "Add a competitor to follow", new_follow_path, method: "get", class: "btn btn-conf-2 btn-green" %>
+                <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-conf-2 btn-green" %>
               </div>
-              <div class="p-body centered">
-                <ul class="features">
-                  <li>
-                    <% if @user.company_name %>
-                      <p><%= @user.company_name %></p>
-                    <% end %>
-                  </li>
-                  <li>
-                    <% if @user.company_url %>
-                        <p> <%= @user.company_url %></p>
-                    <% end %>
-                  </li>
-                </ul>
-                <% if @user === current_user %>
-                  <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get", class: "btn btn-conf-2 btn-green" %>
-                <% end %>
-              </div><!--/p-body-->
-          </div><!--/price-table-->
+            </div>
           </div>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-xs-12 col-md-8">
-
-        <div class="text-center">
-          <div class="col-xs-12 col-md-12">
           <div class="row">
-            <%= link_to "Add a competitor to follow", new_follow_path, method: "get", class: "btn btn-conf-2 btn-green" %>
+            <div class="col-xs-12 col-md-3">
+              <div class="user-div">
+                <div class="price-table">
+                  <div class="p-head centered">
+                    <% if @user.first_name && @user.last_name %>
+                      <p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+                    <% end %>
+                  </div>
+                  <div class="p-body centered">
+                    <ul class="features">
+                      <li>
+                        <% if @user.company_name %>
+                          <p><%= @user.company_name %></p>
+                        <% end %>
+                      </li>
+                      <li>
+                        <% if @user.company_url %>
+                          <p> <%= @user.company_url %></p>
+                        <% end %>
+                      </li>
+                    </ul>
+                    <% if @user === current_user %>
+                      <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get", class: "btn btn-conf-2 btn-green" %>
+                    <% end %>
+                  </div><!--/p-body-->
+                </div><!--/price-table-->
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-8">
+              <div class="col-xs-12 col-md-4">   <!--Beginning of user's competitor followed -->
+                 <div class="competitor-table">
+                    <div class="p-head centered">
+                      <p><strong>List of followed competitors</strong></p>
+                    </div>
+                    <div class="p-body centered">
+                      <ul class="features">
+                        <% @user.competitors.each do |competitor| %>
+                          <li>
+                            <%= competitor.name %>
+                            <%= link_to competitor_path(competitor), method: "delete" do  %>
+                              <i class="fa fa-trash-o"></i>
+                            <% end %>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </div><!--/p-body-->
+                  </div><!--/competitor-table-->
+              </div>
+              <div class="container col-xs-12 col-md-8">
+                <div class="feed-container">
+                    <div class="row">
+                       <% @user.dashboards.each do |dashboard| %>
+                        <div class="col-xs-12 col-md-6">
+                          <div class="dashboard-card" >
+                            <div>
+                              <%# cl_image_tag(ad.url, width: 250, height: 100, crop: :pad) %>
+                              <img src="http://placehold.it/250x100", class="img-responsive">
+                            </div>
+                            <div class="elements-div text-center ">
+                              <div class="text-div">
+                                <h4><%= dashboard.name %></h4>
 
-            <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-conf-2 btn-green" %>
-            </div>
-            </div>
-             <div class="col-xs-12 col-md-12">
-              <ul>
-                <% @user.dashboards.each do |dashboard| %>
-                  <li class="competitor-card">
-                    <div class="col-xs-4">
-                      <%= dashboard.name %>
+                                <div class="dashboard-link">
+                                <%= link_to edit_dashboard_path(dashboard), method: "get" do %>
+                                  <i class="fa fa-pencil"></i>
+                                <% end %>
+                                <%= link_to dashboard_path(dashboard), method: "delete" do %>
+                                  <i class="fa fa-trash-o"></i>
+                                <% end %>
+                                </div>
+
+                              </div>
+                            </div>
+                      </div>
                     </div>
-                    <div class="col-xs-8">
-                       <%= link_to "Modifier", edit_dashboard_path(dashboard), method: "get", class: "btn btn-conf-2 btn-green" %> <%= link_to "Supprimer", dashboard_path(dashboard), method: "delete", class: "btn btn-conf-2 btn-green"  %>
+                    <% end %>
                     </div>
-                    </li>
-                <% end %>
-              </ul>
-            </div>
-        </div>
+                    </div>
+
+                </div>
+              </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>

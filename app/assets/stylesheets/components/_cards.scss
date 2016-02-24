@@ -16,7 +16,30 @@
   width: 275px;
 }
 
+.competitor-container {
+ margin-top: 2em;
+}
+
+
+
 .competitor-card {
+  height: 3em;
+  background-color: white;
+  position: relative;
+  margin-top: 1em;
+  border-radius: 5px;
+  display: flex-inline;
+}
+
+
+.dashboard-card {
+  background-color: white;
+  position: relative;
+  margin-top: 1em;
+  border-radius: 5px;
+  display: flex-inline;
+}
+.dashboard-container {
   height: 5em;
   background-color: white;
   position: relative;
@@ -24,3 +47,5 @@
   border-radius: 5px;
   display: flex;
 }
+
+
