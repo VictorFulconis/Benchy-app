@@ -37,6 +37,7 @@ class DashboardsController < ApplicationController
     #   format.html { redirect_to dashboards_url, notice: 'Dashboard was successfully destroyed.' }
     #   format.json { head :no_content }
     # end
+    @dashboard.pins.destroy_all
     @dashboard.delete
     redirect_to user_path(current_user)
   end

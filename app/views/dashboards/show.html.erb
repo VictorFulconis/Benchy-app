@@ -7,25 +7,29 @@
   <div>
 <!-- Bootstrap grid -->
     <div class="container">
+      <h1><%= @dashboard.name %></h1>
       <div class="row">
-        <% @dashboard.ads.each do |ad| %>
+        <% @dashboard.pins.each do |pin| %>
           <div class="col-xs-6 col-sm-3">
 <!-- Card -->
             <div>
 <!-- Image div -->
               <div>
-                <%= cl_image_tag(ad.url, width: 250, height: 100, crop: :pad) %>
+                <%= cl_image_tag(pin.ad.url, width: 250, height: 100, crop: :pad) %>
               </div>
 <!-- text div -->
               <div>
-                <h4><%= ad.competitor.name.capitalize %></h4>
-                <h4><%= ad.created_at.to_date %></h4>
+                <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                <h4><%= pin.ad.created_at.to_date %></h4>
+                <h4><%= link_to "Supprimer", pin_path(pin), method: "delete", class: "btn btn-conf-2 btn-green"  %></h4>
               </div>
             </div>
 <!-- End of card -->
           </div>
         <% end %>
       </div>
+      <h4><%= link_to "Retour aux annonces", ads_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
+      <h4><%= link_to "Exporter ce dashboard", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
     </div>
 <!-- End of Bootstrap grid -->
   </div>
