@@ -120,9 +120,14 @@
 .dashboard-card {
   background-color: white;
   position: relative;
-  margin-top: 1em;
+  margin-top: 2em;
   border-radius: 5px;
   display: flex-inline;
+   transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .dashboard-container {
   height: 5em;
