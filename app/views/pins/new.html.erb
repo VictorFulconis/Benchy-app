@@ -24,10 +24,13 @@
                 <% end %>
               </li>
             <% end %>
-
-
           </ul>
-          <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-home" %>
+          <%= simple_form_for [@ad, @pin] do |f| %>
+            <%= f.error_notification %>
+            <%= f.hidden_field :dashboard_id, value: nil %>
+            <%= f.button :submit, style: "width: 100%", value: "Créer un dashboard" %>
+          <% end %>
+<!--           <%= link_to "Créer un dashboard", new_dashboard_path, method: "get", class: "btn btn-home" %> -->
         </div>
       </div>
     </div>

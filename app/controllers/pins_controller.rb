@@ -7,13 +7,16 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin =  Pin.new(pin_params)
-    @pin.ad_id = @ad.id
-    if @pin.save
-      @dashboard = @pin.dashboard
-      redirect_to dashboard_path(@dashboard)
+    if pin_params[:dashboard_id] == ""
+      @dashboard = current_user.dashboards.new
+      @dashboard.save
+      @dashboard.pins.create(ad_id: params[:ad_id])
+      redirect_to edit_dashboard_path(@dashboard)
     else
-      render :new
+      @pin = Pin.new(pin_params)
+      @pin.ad_id = params[:ad_id]
+      @pin.save
+      redirect_to dashboard_path(@pin.dashboard)
     end
   end
 
@@ -34,6 +37,6 @@ class PinsController < ApplicationController
   end
 
   def pin_params
-    params.require(:pin).permit(:dashboard_id, :ad_id)
+    params.require(:pin).permit(:dashboard_id)
   end
 end
