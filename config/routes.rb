@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   resources :ads, only: [:index, :show] do
     resources :pins, only: [:new, :create]
   end
-  resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update] do
-    resources :pins, only: :destroy
-  end
+  resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update]
+  resources :pins, only: :destroy
 
 
   # The priority is based upon order of creation: first created -> highest priority.
