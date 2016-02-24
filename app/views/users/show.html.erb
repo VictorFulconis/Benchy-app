@@ -1,5 +1,5 @@
 <div class="page-wrapper">
-  <div class="page-container page-container-responsive row-space-top-4 row-space-8r">
+  <div class="page-container">
     <div class="container">
       <div class="row">
          <div class="text-center">
@@ -66,9 +66,8 @@
                        <% @user.dashboards.each do |dashboard| %>
                         <div class="col-xs-12 col-md-6">
                           <div class="dashboard-card text-center" >
-                            <div>
-                              <%# cl_image_tag(ad.url, width: 250, height: 100, crop: :pad) %>
-                              <img src="http://placehold.it/450x100", class="img-responsive">
+                            <div class="img-responsive">
+                              <%= cl_image_tag("twv1hthr4dqofzmapxoi", width: 300, height: 100, crop: :scale) %>
                             </div>
                             <div class="elements-div text-center ">
                               <div class="text-div">
@@ -95,6 +94,5 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 </div>
