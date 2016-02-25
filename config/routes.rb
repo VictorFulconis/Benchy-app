@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :pins, only: :destroy
   require "sidekiq/web"
   require 'sidekiq-scheduler/web'
-  authenticate :user, lambda { |u| u.email == 'a@gmail.com' } do
+  authenticate :user, lambda { |u| u.email == 'b@gmail.com' } do
     mount Sidekiq::Web => '/sidekiq'
   end
 
