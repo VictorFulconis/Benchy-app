@@ -1,4 +1,4 @@
 desc "This task is called by the Heroku scheduler add-on"
-task :scrap do
+task :scrap => :environment do
   CompetitorscrappingJob.perform_later
 end
