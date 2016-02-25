@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222152725) do
+ActiveRecord::Schema.define(version: 20160225112720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "ads", force: :cascade do |t|
-    t.string   "url"
+    t.string   "cloudinary_public_id"
     t.integer  "competitor_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   add_index "ads", ["competitor_id"], name: "index_ads_on_competitor_id", using: :btree
