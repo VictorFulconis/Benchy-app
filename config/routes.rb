@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   end
   resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update]
   resources :pins, only: :destroy
-
+  require "sidekiq/web"
+  require 'sidekiq-scheduler/web'
+  authenticate :user, lambda { |u| u.email == 'a@gmail.com' } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
