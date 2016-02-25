@@ -36,7 +36,7 @@ follow.save
 images_url = ["k1rb2hq1sh8jqkosvlyi", "duj3gymo2hdseug0ipp5", "dmas2cpdkoyul4o5edhk"]
 images_url.each do |image|
   Ad.create(
-    url: image,
+    cloudinary_public_id: image,
     competitor_id: competitor.id
     )
 end
@@ -54,13 +54,13 @@ follow.save
 images_url = ["xrstfgeajkfiixvpc96w", "usxmzix6pd227l015yvc", "kdzkhmbbew68icdk2dhq"]
 images_url.each do |image|
   Ad.create(
-    url: image,
+    cloudinary_public_id: image,
     competitor_id: competitor.id
     )
 end
 competitor = Competitor.new(
   name: "fnac",
-  url: "www.fnac.fr",
+  url: "www.fnac.com",
   scraping_parameters: ""
   )
 competitor.save
@@ -72,13 +72,13 @@ follow.save
 images_url = ["xq8xikstorlorfqtfw7e", "emqkw3er7sttudrvwpqw", "sxnod6hxgmtyzyy0xrbz"]
 images_url.each do |image|
   Ad.create(
-    url: image,
+    cloudinary_public_id: image,
     competitor_id: competitor.id
     )
 end
 competitor = Competitor.new(
   name: "priceminister",
-  url: "www.priceminister.fr",
+  url: "www.priceminister.com",
   scraping_parameters: ""
   )
 competitor.save
@@ -90,7 +90,7 @@ follow.save
 images_url = ["w0sxnslu8eanvnzckzr4", "zrlvikuofxbzd6kisr6t", "jw8u1zz2khhokqp5owzh"]
 images_url.each do |image|
   Ad.create(
-    url: image,
+    cloudinary_public_id: image,
     competitor_id: competitor.id
     )
 end

@@ -7,7 +7,7 @@
                 <div class="card">
                 <!-- Image div -->
                   <div>
-                    <%= cl_image_tag(@ad.url, width: 250, height: 100, crop: :pad) %>
+                    <%= cl_image_tag(@ad.cloudinary_public_id, width: 250, height: 100, crop: :pad) %>
                   </div>
                 <!-- text div -->
                   <div>

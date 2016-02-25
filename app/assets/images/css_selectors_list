@@ -1,2 +1,5 @@
 amazon:
 .a-carousel-card img src
+
+#sidebar > img
+#sidebar > .displayAd > #ad > img
