@@ -1,0 +1,5 @@
+run_scrapper:
+  cron: '* * * * *'
+  class: CompetitorscrappingJob
+  queue: default
+  description: "This launches daily the scrapping of each competitor"

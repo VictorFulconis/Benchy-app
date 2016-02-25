@@ -8,8 +8,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
 gem 'cloudinary'
-gem "rails-i18n"
-
+gem 'rails-i18n'
+gem 'sidekiq'
+gem 'sinatra'
+gem 'sidekiq-failures'
+gem 'sidekiq-scheduler', '~> 2.0.3'
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
