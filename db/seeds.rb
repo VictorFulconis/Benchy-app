@@ -33,7 +33,7 @@ follow = Follow.new(
   competitor_id: competitor.id
   )
 follow.save
-images_url = ["k1rb2hq1sh8jqkosvlyi", "duj3gymo2hdseug0ipp5", "dmas2cpdkoyul4o5edhk"]
+images_url = ["k1rb2hq1sh8jqkosvlyi", "duj3gymo2hdseug0ipp5", "dmas2cpdkoyul4o5edhk", "k1rb2hq1sh8jqkosvlyi", "duj3gymo2hdseug0ipp5", "dmas2cpdkoyul4o5edhk"]
 images_url.each do |image|
   Ad.create(
     cloudinary_public_id: image,
@@ -51,7 +51,7 @@ follow = Follow.new(
   competitor_id: competitor.id
   )
 follow.save
-images_url = ["xrstfgeajkfiixvpc96w", "usxmzix6pd227l015yvc", "kdzkhmbbew68icdk2dhq"]
+images_url = ["xrstfgeajkfiixvpc96w", "usxmzix6pd227l015yvc", "kdzkhmbbew68icdk2dhq", "xrstfgeajkfiixvpc96w", "usxmzix6pd227l015yvc", "kdzkhmbbew68icdk2dhq"]
 images_url.each do |image|
   Ad.create(
     cloudinary_public_id: image,
