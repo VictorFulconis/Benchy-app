@@ -2,47 +2,59 @@
   <div class="page-container">
     <div class="container form">
       <div class="row">
-            <div class="pin col-xs-6 col-xs-offset-3">
-              <div class="col-xs-6">
-                <div class="card">
-                <!-- Image div -->
-                  <div>
-                    <%= cl_image_tag(@ad.cloudinary_public_id, width: 250, height: 100, crop: :pad) %>
-                  </div>
-                <!-- text div -->
-                  <div>
-                    <h4><%= @ad.competitor.name.capitalize %></h4>
-                    <p><%= @ad.created_at.to_date %></p>
+        <div class="pin col-xs-6 col-xs-offset-3">
+          <div><!--
+            <div class="container"> -->
+              <div class="row ad_to_pin text-center">
+                <div class="col-xs-8 col-xs-offset-2">
+                  <div class="card">
+                  <!-- Image div -->
+                    <div>
+                      <%= cl_image_tag(@ad.cloudinary_public_id, width: 250, height: 100, crop: :pad) %>
+                    </div>
+                  <!-- text div -->
+                    <div>
+                      <h4><%= @ad.competitor.name.capitalize %></h4>
+                      <p><%= @ad.created_at.to_date %></p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xs-6">
-                <div class="card">
-
-                    <% current_user.dashboards.each do |dashboard| %>
-                      <table class="table_dashboard">
-                        <tbody>
-                          <tr>
-                            <td class="dash_name"><%= dashboard.name %></td>
-                            <td><%= simple_form_for [@ad, @pin] do |f| %>
-                              <%= f.error_notification %>
-                              <%= f.hidden_field :dashboard_id, value: dashboard.id %>
-                              <%= f.button :submit, class: "btn btn-primary pin-it-btn", value: "Pin it"%>
-                            <% end %>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    <% end %>
-                  <%= simple_form_for [@ad, @pin] do |f| %>
-                    <%= f.error_notification %>
-                    <%= f.hidden_field :dashboard_id, value: nil %>
-                    <%= f.button :submit, value: "Créer un dashboard", class: "pin-it-btn" %>
-                  <% end %>
-
+              <div class="separator"></div>
+              <div class="row ad_to_pin">
+                <div class="col-xs-8 col-xs-offset-2">
+                  <div class="card text-center">
+                    <h4><strong>Choisir un tableau</strong></h4>
+                    <div class="col-xs-8 col-xs-offset-2">
+                      <% current_user.dashboards.each do |dashboard| %>
+                        <table class="table_dashboard text-center">
+                          <tbody>
+                            <tr class="ad-to-pin-hover">
+                              <td class="dash_name"><%= dashboard.name %></td>
+                              <td><%= simple_form_for [@ad, @pin] do |f| %>
+                                <%= f.error_notification %>
+                                <%= f.hidden_field :dashboard_id, value: dashboard.id %>
+                                <%= f.button :submit, class: "btn btn-primary pin-it-btn", value: "Pin it"%>
+                              <% end %>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      <% end %>
+                    </div>
+                    <div>
+                      <%= simple_form_for [@ad, @pin] do |f| %>
+                        <%= f.error_notification %>
+                        <%= f.hidden_field :dashboard_id, value: nil %>
+                        <%= f.button :submit, value: "Créer un dashboard", class: "pin-it-btn" %>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+<!--             </div> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>

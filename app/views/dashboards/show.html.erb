@@ -29,7 +29,8 @@
         <% end %>
       </div>
       <h4><%= link_to "Retour aux annonces", ads_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
-      <h4><%= link_to "Exporter ce dashboard", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
+      <h4><%= link_to "Retour à mes tableaux", user_path(current_user), class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
+      <h4><%= link_to "Exporter ce tableau", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
     </div>
 <!-- End of Bootstrap grid -->
   </div>
