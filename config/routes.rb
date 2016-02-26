@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :pins, only: [:new, :create]
   end
   resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update]
-  resources :pins, only: :destroy
+  resources :pins, only: [:destroy, :update]
   require "sidekiq/web"
   require 'sidekiq-scheduler/web'
   authenticate :user, lambda { |u| u.email == 'b@gmail.com' } do

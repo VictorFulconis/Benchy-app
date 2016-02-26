@@ -34,13 +34,21 @@
                 <td class="colarrow2">
                 </td>
                 <td class="colcomment">
-                  <div></div>
+                  <div class="comment">
+                    <%= simple_form_for (pin) do |f| %>
+                      <%= f.input :comment, placeholder: "Add a comment", label: false %>
+                    <% end %>
+                  </div>
                 </td>
               </tr>
             <% else %>
               <tr>
                 <td class="colcomment">
-                  <div></div>
+                  <div class="comment">
+                    <%= simple_form_for (pin) do |f| %>
+                      <%= f.input :comment, placeholder: "Add a comment", label: false %>
+                    <% end %>
+                  </div>
                 </td>
                 <td class="colarrow1">
                 </td>
