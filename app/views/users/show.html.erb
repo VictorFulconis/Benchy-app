@@ -4,8 +4,7 @@
       <div class="row">
          <div class="text-center">
             <div class="col-xs-12 col-md-12">
-                          <div class="header-competitor"> </div>
-
+              <div class="header-competitor"> </div>
             </div>
           </div>
           <div class="row">
@@ -39,13 +38,13 @@
 
                 <div class="competitor-table"> <!--Beginning of user's competitor followed -->
                     <div class="p-head centered">
-                      <p><strong>List of followed competitors</strong></p>
+                      <p><strong>My competitors</strong></p>
                     </div>
-                    <div class="p-body centered">
+                    <div class="p-body text-left">
                       <ul class="features">
                         <% @user.follows.each do |follow| %>
                           <li>
-                            <%= follow.competitor.name %>
+                            <%= follow.competitor.name.capitalize %>
                             <%= link_to follow_path(follow), method: "delete" do  %>
                               <i class="fa fa-trash-o"></i>
                             <% end %>
@@ -59,7 +58,7 @@
             <div class="col-xs-12 col-md-9">
             <div class="col-xs-12 col-md-12 text-center">
               <div class="header-competitor">
-                <h4><strong>Mes tableaux</strong></h4>
+                <h4><strong>My dashboards</strong></h4>
                 </div>
             </div>
                 <div class="feed-container">
@@ -74,7 +73,7 @@
 
                             <div class="elements-div text-center ">
                               <div class="text-div">
-                                <h4><%= dashboard.name %></h4>
+                                <h4><%= dashboard.name.capitalize %></h4>
 
 
                                 <div class="dashboard-link">
