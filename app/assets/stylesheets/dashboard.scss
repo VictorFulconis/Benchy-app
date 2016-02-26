@@ -1,0 +1,71 @@
+.timeline-container table {
+  margin: 50px auto 0 auto;
+  width: 1400px;
+  border-collapse: separate;
+  border-spacing: 50px 0px;
+  .coltimeline {
+  border-right: non;
+  background-color: green;
+  color: white;
+  width: 50px;
+  padding: 5px;
+    p {
+      color: white;
+      font-size: 12px;
+    }
+  }
+  .colcard {
+    width: 450px;
+  }
+  .colcomment {
+    width: 450px;
+    #pin_comment {
+      background-color: #F9EE78;
+      border: none;
+      font-style: italic;
+    }
+    .btn-save-comment {
+      border: none;
+      background-color: #F5F5F5;
+      text-decoration: underline;
+    }
+  }
+  .colarrow1, .colarrow2 {
+    width: 125px;
+    i {
+      font-size: 30px;
+    }
+  }
+}
+
+.export-container {
+  width: 800px;
+  margin: 100px auto;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 20px;
+  .btn-save-comment {
+    border: none;
+    background-color: #F5F5F5;
+    text-decoration: underline;
+  }
+  #dashboard_main_comments {
+    height: 200px;
+  }
+}
+
+.lowerlinks-container {
+  margin: 100px auto 0 auto;
+  width: 300px;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 46px solid transparent;
+  border-right: 46px solid transparent;
+  border-top: 100px solid green;
+  background-color: #F5F5F5;
+  margin: 0 auto;
+}
+

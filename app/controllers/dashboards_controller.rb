@@ -23,7 +23,7 @@ class DashboardsController < ApplicationController
 
   private
   def dashboard_params
-    params.require(:dashboard).permit(:name)
+    params.require(:dashboard).permit(:name, :main_comments)
   end
 
   def set_dashboard
