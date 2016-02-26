@@ -121,10 +121,13 @@
   background-color: white;
   position: relative;
   margin-top: 2em;
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex-inline;
-   transition: all 0.2s ease-in-out;
-
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #5A5A5A;
+  .elements-div {
+    background-color: #F5F5F5;
+  }
   &:hover {
     transform: scale(1.1);
   }

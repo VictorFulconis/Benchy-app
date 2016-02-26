@@ -67,9 +67,9 @@
                        <% @user.dashboards.each do |dashboard| %>
                         <div class="col-xs-12 col-md-6">
                           <div class="dashboard-card text-center" >
-                            <div class="img-responsive">
+                            <%= link_to dashboard_path(dashboard), class:"img-responsive" do %>
                               <%= cl_image_tag("twv1hthr4dqofzmapxoi", width: 300, height: 100, crop: :scale) %>
-                            </div>
+                            <% end %>
                             <div class="elements-div text-center ">
                               <div class="text-div">
                                 <h4><%= dashboard.name %></h4>
