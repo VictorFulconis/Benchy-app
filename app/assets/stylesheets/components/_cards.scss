@@ -93,10 +93,11 @@
     height: 50px;
     border-radius: 50%;
     color: white;
-    transition: color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     border: none;
     &:hover {
       color: grey;
+      transform: scale(1.1);
     }
   }
 }
@@ -145,56 +146,86 @@
 
 // SECOND VERSION OF TIMELINE
 
-// .timeline-container .ad-card {
-//   border: 1px solid rgb(230, 230, 230);
-//   border-radius: 5px;
-//   box-shadow: 1px 1px 2px rgba(100,100, 100, 0.2);
-//   margin: 15px;
-//   width: 275px;
-//   height: 200px;
-//   background-color: white;
-//   transition: all 0.2s ease-in-out;
-//   &:hover {
-//     transform: scale(1.1);
-//   }
-//   button {
-//     border: none;
-//     background-color: white;
-//   }
-//   .image-div {
-//     margin-left: 12.5px;
-//     border-bottom: 0.5px dashed rgb(230, 230, 230);
-//   }
-//   .elements-div {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-//   height: 50px;
-//   width: 275px;
-//   }
-//   .text-div {
-//     text-align: left;
-//     width: 137px;
-//     height: 50px;
-//     p {
-//       font-size: 12px;
-//       line-height: 1px;
-//     }
-//     h5 {
-//       font-weight: bold;
-//       font-size: 14px;
-//     }
-//   }
-//   .pin-btn {
-//     background-color: red;
-//     width: 25px;
-//     height: 25px;
-//     border-radius: 50%;
-//     color: white;
-//     transition: color 0.2s ease-in-out;
-//     &:hover {
-//       color: grey;
-//     }
-//   }
-// }
+.timeline-container table {
+  margin: 50px auto 0 auto;
+  width: 1400px;
+  border-collapse: separate;
+  border-spacing: 50px 0px;
+  .coltimeline {
+  border-right: 1px solid green;
+  border-left: 1px solid green;
+  background-color: green;
+  color: white;
+  width: 50px;
+    p {
+      color: white;
+      font-size: 15px;
+    }
+  }
+  .colcard {
+    width: 450px;
+  }
+  .colcomment {
+    width: 450px;
+  }
+  .colarrow1, .colarrow2 {
+    width: 125px;
+    i {
+      font-size: 30px;
+    }
+  }
+}
 
+.timeline-container .ad-card {
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px rgba(100,100, 100, 0.2);
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  .image-div {
+    margin-left: 10px;
+    border-bottom: 0.5px dashed rgb(230, 230, 230);
+  }
+  .elements-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    width: 500px;
+  }
+  .text-div {
+    text-align: left;
+    width: 250px;
+    height: 100px;
+    p {
+      font-size: 12px;
+      line-height: 1px;
+    }
+    h5 {
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+  .unpin-btn {
+    background-color: red;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: grey;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.lowerlinks-container {
+  margin: 100px auto 0 auto;
+  width: 300px;
+}

@@ -1,155 +1,80 @@
-<!-- FIRST VERSION -->
 
-<!-- <div class="page-wrapper"> -->
-<!-- Timeline container -->
-<!--   <div>
-  </div> -->
-<!-- End of Timeline container -->
-<!-- Ads container -->
-<!--   <div> -->
-<!-- Bootstrap grid -->
-<!--     <div class="container">
-      <h1><%= @dashboard.name %></h1>
-      <div class="row">
-        <% @dashboard.pins.each do |pin| %>
-          <div class="col-xs-6 col-sm-3"> -->
-<!-- Card -->
-<!--             <div>
- --><!-- Image div -->
-<!--               <div>
-                <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 250, height: 100, crop: :pad) %>
-              </div> -->
-<!-- text div -->
-<!--               <div>
-                <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                <h4><%= pin.ad.created_at.to_date %></h4>
-                <h4><%= link_to "Supprimer", pin_path(pin), method: "delete", class: "btn btn-conf-2 btn-green"  %></h4>
-              </div>
-            </div> -->
-<!-- End of card -->
-<!--           </div>
-        <% end %>
-      </div>
-      <h4><%= link_to "Retour aux annonces", ads_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
-      <h4><%= link_to "Exporter ce dashboard", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
-    </div> -->
-<!-- End of Bootstrap grid -->
-<!--   </div> -->
-<!-- End of Ads container -->
-<!-- </div> -->
-
-<!-- SECOND VERSION -->
-
-<!-- <div class="page-wrapper">
+<div class="page-wrapper">
   <div class="page-container">
-    <div class="container">
-      <div class="timeline-container">
-        <% @count = 0 %>
-        <% @dashboard.pins.each do |pin| %>
-          <% @count += 1 %>
-          <div class="row">
-            <div class="col-xs-6">
-              <div class="col-content">
-                <div class="ad-card">
-                  <div class="image-div">
-                    <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 250, height: 100, crop: :pad) %>
-                  </div>
-                  <div class="elements-div">
-                    <div class="text-div">
-                      <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                      <h4><%= pin.ad.created_at.to_date %></h4>
+    <div class="timeline-container">
+      <table>
+        <tbody>
+          <% @count = 0 %>
+          <% @dashboard.pins.each do |pin| %>
+            <% @count += 1 %>
+            <% if @count%2 != 0 %>
+              <tr>
+                <td class="colcard">
+                  <div class="ad-card">
+                    <div class="image-div">
+                      <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
                     </div>
-                    <h4><%= link_to "Supprimer", pin_path(pin), method: "delete", class: "btn btn-conf-2 btn-green"  %></h4>
+                    <div class="elements-div">
+                      <div class="text-div">
+                        <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                        <h4><%= pin.ad.created_at.to_date %></h4>
+                      </div>
+                      <h4><%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn"  %></h4>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
+                </td>
+                <td class="colarrow1">
+                  <i class="fa fa-arrow-right"></i>
+                </td>
+                <td class="coltimeline">
+                  <div>
+                    <p><%= pin.ad.created_at.to_date %><p>
+                  </div>
+                </td>
+                <td class="colarrow2">
+                </td>
+                <td class="colcomment">
+                  <div></div>
+                </td>
+              </tr>
+            <% else %>
+              <tr>
+                <td class="colcomment">
+                  <div></div>
+                </td>
+                <td class="colarrow1">
+                </td>
+                <td class="coltimeline">
+                  <div>
+                    <p><%= pin.ad.created_at.to_date %></p>
+                  </div>
+                </td>
+                <td class="colarrow2">
+                  <i class="fa fa-arrow-left"></i>
+                </td>
+                <td class="colcard">
+                  <div class="ad-card">
+                    <div class="image-div">
+                      <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
+                    </div>
+                    <div class="elements-div">
+                      <div class="text-div">
+                        <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                        <h4><%= pin.ad.created_at.to_date %></h4>
+                      </div>
+                      <h4><%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn" %></h4>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="lowerlinks-container">
       <%= link_to "Retour aux annonces", ads_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %>
       <h4><%= link_to "Exporter ce dashboard", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
     </div>
   </div>
-</div> -->
-
-<!-- THIRD VERSION -->
-
-<script src="modernizr.js"></script>
-<script src="main.js"></script>
-
-
-<section id="cd-timeline" class="cd-container">
-  <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-picture"> <img src="cd-icon-picture.svg" alt="Picture"> </div>
-    <!-- cd-timeline-img -->
-
-    <div class="cd-timeline-content">
-      <h2>Title of section 1</h2>
-      <p> Content 1 </p>
-      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-<a href="http://www.jqueryscript.net/time-clock/">date</a>">Jan 14</span> </div>
-    <!-- cd-timeline-content -->
-  </div>
-  <!-- cd-timeline-block -->
-
-  <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-movie"> <img src="cd-icon-movie.svg" alt="Movie"> </div>
-    <!-- cd-timeline-img -->
-
-    <div class="cd-timeline-content">
-      <h2>Title of section 2</h2>
-      <p> Content 2 </p>
-      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Jan 18</span> </div>
-    <!-- cd-timeline-content -->
-  </div>
-  <!-- cd-timeline-block -->
-
-  <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-picture"> <img src="cd-icon-picture.svg" alt="Picture"> </div>
-    <!-- cd-timeline-img -->
-
-    <div class="cd-timeline-content">
-      <h2>Title of section 3</h2>
-      <p> Content 3 </p>
-      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Jan 24</span> </div>
-    <!-- cd-timeline-content -->
-  </div>
-  <!-- cd-timeline-block -->
-
-  <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-location"> <img src="cd-icon-location.svg" alt="Location"> </div>
-    <!-- cd-timeline-img -->
-
-    <div class="cd-timeline-content">
-      <h2>Title of section 4</h2>
-      <p> Content 4 </p>
-      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Feb 14</span> </div>
-    <!-- cd-timeline-content -->
-  </div>
-  <!-- cd-timeline-block -->
-
-  <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-location"> <img src="cd-icon-location.svg" alt="Location"> </div>
-    <!-- cd-timeline-img -->
-
-    <div class="cd-timeline-content">
-      <h2>Title of section 5</h2>
-      <p> Content 5 </p>
-      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Feb 18</span> </div>
-    <!-- cd-timeline-content -->
-  </div>
-  <!-- cd-timeline-block -->
-
-  <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-movie"> <img src="cd-icon-movie.svg" alt="Movie"> </div>
-    <!-- cd-timeline-img -->
-
-    <div class="cd-timeline-content">
-      <h2>Final Section</h2>
-      <p> Content 6 </p>
-      <a href="#0" class="cd-read-more">Read more</a> <span class="cd-date">Feb 26</span> </div>
-    <!-- cd-timeline-content -->
-  </div>
-  <!-- cd-timeline-block -->
-</section>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</div>
