@@ -94,12 +94,17 @@ images_url.each do |image|
     competitor_id: competitor.id
     )
 end
-Ad.first(4).each do |ad|
+Ad.first(10).each do |ad|
   Pin.create(
     ad_id: ad.id,
     dashboard_id: dashboard.id
     )
 end
+
+
+
+
+
 
 user = User.new(
   email: "b@gmail.com",
@@ -187,7 +192,7 @@ images_url.each do |image|
     competitor_id: competitor.id
     )
 end
-Ad.first(4).each do |ad|
+Ad.first(10).each do |ad|
   Pin.create(
     ad_id: ad.id,
     dashboard_id: dashboard.id
