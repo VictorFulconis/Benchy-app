@@ -37,6 +37,7 @@
                   <div class="comment">
                     <%= simple_form_for (pin) do |f| %>
                       <%= f.input :comment, placeholder: "Add a comment", label: false %>
+                      <%= f.submit 'Save', class: 'btn-save-comment' %>
                     <% end %>
                   </div>
                 </td>
@@ -47,6 +48,7 @@
                   <div class="comment">
                     <%= simple_form_for (pin) do |f| %>
                       <%= f.input :comment, placeholder: "Add a comment", label: false %>
+                      <%= f.submit 'Save', class: 'btn-save-comment' %>
                     <% end %>
                   </div>
                 </td>
@@ -79,10 +81,19 @@
           <% end %>
         </tbody>
       </table>
+      <div class="arrow-down"></div>
+    </div>
+    <div class='export-container'>
+      <div class='dashboard-comment'>
+        <%= simple_form_for (@dashboard) do |f| %>
+          <%= f.input :main_comments, placeholder: "Add a message to your team", label: false %>
+          <%= f.submit 'Save your message', class: 'btn-save-comment' %>
+          <%= link_to "Send this dashboard to your team", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %>
+        <% end %>
+      </div>
     </div>
     <div class="lowerlinks-container">
       <%= link_to "Retour aux annonces", ads_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %>
-      <h4><%= link_to "Exporter ce dashboard", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %></h4>
     </div>
   </div>
 </div>
