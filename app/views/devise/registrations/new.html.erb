@@ -2,7 +2,9 @@
   <div class="page-container">
     <div class="container">
       <div class="row">
-        <h2>Sign up</h2>
+        <div class="text-center">
+         <h2>Sign up</h2>
+        </div>
         <div class="col-xs-8 col-xs-offset-2">
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
@@ -12,9 +14,11 @@
                 <%= f.input :password_confirmation, required: true %>
             </div>
             <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
+            <%= f.button :submit, "Sign up", class: "btn btn-conf-2 btn-green", style: "width: 100%" %>
         </div>
       <% end %>
+      <%= render "devise/shared/links" %>
+
     </div>
   </div>
 </div>
@@ -23,4 +27,3 @@
 
 
 
-<%= render "devise/shared/links" %>

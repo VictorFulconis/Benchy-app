@@ -4,7 +4,9 @@
   <div class="page-container">
     <div class="container">
       <div class="row">
-        <h2>Log in</h2>
+        <div class="text-center">
+          <h2>Log in</h2>
+        </div>
         <div class="col-xs-8 col-xs-offset-2">
 
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -15,13 +17,13 @@
             </div>
 
             <div class="form-actions">
-              <%= f.button :submit, "Log in" %>
+              <%= f.button :submit, "Log in", class: "btn btn-conf-2 btn-green", style: "width: 100%" %>
             </div>
           <% end %>
-</div>
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<%= render "devise/shared/links" %>
