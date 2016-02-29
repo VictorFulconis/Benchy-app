@@ -101,9 +101,24 @@ Ad.first(10).each do |ad|
     )
 end
 
-
-
-
+user = User.new(
+  email: "teammember1@gmail.com",
+  password: "11111111",
+  first_name: "John",
+  last_name: "Stone",
+  company_url: "www.ebay.com",
+  company_name: "Ebay"
+  )
+user.save
+user = User.new(
+  email: "teammember2@gmail.com",
+  password: "11111111",
+  first_name: "Jean",
+  last_name: "Pierre",
+  company_url: "www.ebay.com",
+  company_name: "Ebay"
+  )
+user.save
 
 
 user = User.new(

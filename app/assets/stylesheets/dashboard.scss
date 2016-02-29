@@ -19,6 +19,13 @@
   }
   .colcomment {
     width: 450px;
+    .comment-view {
+      width: 450px;
+      background-color: #F9EE78;
+      font-style: italic;
+      border-radius: 5px;
+      padding: 5px;
+    }
     #pin_comment {
       background-color: #F9EE78;
       border: none;
@@ -48,6 +55,11 @@
     border: none;
     background-color: #F5F5F5;
     text-decoration: underline;
+  }
+  .dashboard-comment-view {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
   }
   #dashboard_main_comments {
     height: 200px;
