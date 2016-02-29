@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'nokogiri'
 gem 'postmark-rails'
+gem "select2-rails"
 
 group :development, :test do
   gem 'binding_of_caller'

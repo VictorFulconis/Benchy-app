@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   before_action :set_dashboard, only: [:edit, :destroy, :update]
+  before_action :set_team, only: [:show]
 
   def show
     @share = Share.new
@@ -35,6 +36,10 @@ class DashboardsController < ApplicationController
   end
 
   private
+
+  def set_team
+    @team = User.where(company_name: current_user.company_name)
+  end
 
   def dashboard_params
     params.require(:dashboard).permit(:name, :main_comments)
