@@ -1,105 +1,207 @@
-
-<div class="page-wrapper">
-  <div class="page-container">
-    <div class='title-container text-center'>
-      <h1><%= @dashboard.name.capitalize %></h1>
-    </div>
-    <div class="timeline-container">
-      <table>
-        <tbody>
-          <% @count = 0 %>
-          <% @dashboard.pins.each do |pin| %>
-            <% @count += 1 %>
-            <% if @count%2 != 0 %>
-              <tr>
-                <td class="colcard">
-                  <div class="ad-card">
-                    <div class="image-div">
-                      <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
-                    </div>
-                    <div class="elements-div">
-                      <div class="text-div">
-                        <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                        <h4><%= pin.ad.created_at.to_date %></h4>
+<% if @type == "owner" %>
+  <div class="page-wrapper">
+    <div class="page-container">
+      <div class='title-container text-center'>
+        <h1><%= @dashboard.name.capitalize %></h1>
+      </div>
+      <div class="timeline-container">
+        <table>
+          <tbody>
+            <% @count = 0 %>
+            <% @dashboard.pins.each do |pin| %>
+              <% @count += 1 %>
+              <% if @count%2 != 0 %>
+                <tr>
+                  <td class="colcard">
+                    <div class="ad-card">
+                      <div class="image-div">
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
                       </div>
-                      <h4><%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn"  %></h4>
-                    </div>
-                  </div>
-                </td>
-                <td class="colarrow1">
-                  <i class="fa fa-arrow-right"></i>
-                </td>
-                <td class="coltimeline">
-                  <div class="timebubble">
-                    <p><%= pin.ad.created_at.to_date %><p>
-                  </div>
-                </td>
-                <td class="colarrow2">
-                </td>
-                <td class="colcomment">
-                  <div class="comment">
-                    <%= simple_form_for (pin) do |f| %>
-                      <%= f.input :comment, placeholder: "Add a comment", label: false %>
-                      <%= f.submit 'Save', class: 'btn-save-comment' %>
-                    <% end %>
-                  </div>
-                </td>
-              </tr>
-            <% else %>
-              <tr>
-                <td class="colcomment">
-                  <div class="comment">
-                    <%= simple_form_for (pin) do |f| %>
-                      <%= f.input :comment, placeholder: "Add a comment", label: false %>
-                      <%= f.submit 'Save', class: 'btn-save-comment' %>
-                    <% end %>
-                  </div>
-                </td>
-                <td class="colarrow1">
-                </td>
-                <td class="coltimeline">
-                  <div class="timebubble">
-                    <p><%= pin.ad.created_at.to_date %></p>
-                  </div>
-                </td>
-                <td class="colarrow2">
-                  <i class="fa fa-arrow-left"></i>
-                </td>
-                <td class="colcard">
-                  <div class="ad-card">
-                    <div class="image-div">
-                      <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
-                    </div>
-                    <div class="elements-div">
-                      <div class="text-div">
-                        <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                        <h4><%= pin.ad.created_at.to_date %></h4>
+                      <div class="elements-div">
+                        <div class="text-div">
+                          <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                          <h4><%= pin.ad.created_at.to_date %></h4>
+                        </div>
+                        <h4><%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn"  %></h4>
                       </div>
-                      <h4><%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn" %></h4>
                     </div>
-                  </div>
-                </td>
-              </tr>
+                  </td>
+                  <td class="colarrow1">
+                    <i class="fa fa-arrow-right"></i>
+                  </td>
+                  <td class="coltimeline">
+                    <div class="timebubble">
+                      <p><%= pin.ad.created_at.to_date %><p>
+                    </div>
+                  </td>
+                  <td class="colarrow2">
+                  </td>
+                  <td class="colcomment">
+                    <div class="comment">
+                      <%= simple_form_for (pin) do |f| %>
+                        <%= f.input :comment, placeholder: "Add a comment", label: false %>
+                        <%= f.submit 'Save', class: 'btn-save-comment' %>
+                      <% end %>
+                    </div>
+                  </td>
+                </tr>
+              <% else %>
+                <tr>
+                  <td class="colcomment">
+                    <div class="comment">
+                      <%= simple_form_for (pin) do |f| %>
+                        <%= f.input :comment, placeholder: "Add a comment", label: false %>
+                        <%= f.submit 'Save', class: 'btn-save-comment' %>
+                      <% end %>
+                    </div>
+                  </td>
+                  <td class="colarrow1">
+                  </td>
+                  <td class="coltimeline">
+                    <div class="timebubble">
+                      <p><%= pin.ad.created_at.to_date %></p>
+                    </div>
+                  </td>
+                  <td class="colarrow2">
+                    <i class="fa fa-arrow-left"></i>
+                  </td>
+                  <td class="colcard">
+                    <div class="ad-card">
+                      <div class="image-div">
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
+                      </div>
+                      <div class="elements-div">
+                        <div class="text-div">
+                          <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                          <h4><%= pin.ad.created_at.to_date %></h4>
+                        </div>
+                        <h4><%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn" %></h4>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
             <% end %>
-          <% end %>
-        </tbody>
-      </table>
-      <% if @dashboard.pins.count > 1 %>
-        <div class="arrow-down"></div>
-      <% end %>
-    </div>
-    <div class='export-container'>
-      <div class='dashboard-comment'>
-        <%= simple_form_for (@dashboard) do |f| %>
-          <%= f.input :main_comments, placeholder: "Add a message to your team", label: false %>
-          <%= f.submit 'Save your message', class: 'btn-save-comment' %>
-          <%= link_to "Send this dashboard to your team", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %>
+          </tbody>
+        </table>
+        <% if @dashboard.pins.count > 1 %>
+          <div class="arrow-down"></div>
         <% end %>
       </div>
-    </div>
-    <div class="lowerlinks-container">
-      <%= link_to "Retour aux annonces", ads_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %>
+      <div class='export-container'>
+        <div class='dashboard-comment'>
+          <%= simple_form_for (@dashboard) do |f| %>
+            <%= f.input :main_comments, placeholder: "Add a message to your team", label: false %>
+            <%= f.submit 'Save your message', class: 'btn-save-comment' %>
+            <%= link_to "Send this dashboard to your team", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %>
+          <% end %>
+        </div>
+      </div>
+      <div class="lowerlinks-container">
+        <%= link_to "Back to feed", ads_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %>
+      </div>
     </div>
   </div>
-</div>
-<%= render 'shares/sharesform' %>
+  <%= render 'shares/sharesform' %>
+
+<% elsif @type == "viewer" %>
+
+  <div class="page-wrapper">
+    <div class="page-container">
+      <div class='title-container text-center'>
+        <h1><%= @dashboard.name.capitalize %></h1>
+      </div>
+      <div class="timeline-container">
+        <table>
+          <tbody>
+            <% @count = 0 %>
+            <% @dashboard.pins.each do |pin| %>
+              <% @count += 1 %>
+              <% if @count%2 != 0 %>
+                <tr>
+                  <td class="colcard">
+                    <div class="ad-card">
+                      <div class="image-div">
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
+                      </div>
+                      <div class="elements-div">
+                        <div class="text-div">
+                          <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                          <h4><%= pin.ad.created_at.to_date %></h4>
+                        </div>
+                        <div class="unpin-btn-placeholder"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="colarrow1">
+                    <i class="fa fa-arrow-right"></i>
+                  </td>
+                  <td class="coltimeline">
+                    <div class="timebubble">
+                      <p><%= pin.ad.created_at.to_date %><p>
+                    </div>
+                  </td>
+                  <td class="colarrow2">
+                  </td>
+                  <td class="colcomment">
+                    <% if pin.comment %>
+                      <div class="comment-view">
+                        <p><%= pin.comment %></p>
+                      </div>
+                    <% end %>
+                  </td>
+                </tr>
+              <% else %>
+                <tr>
+                  <td class="colcomment">
+                    <% if pin.comment %>
+                      <div class="comment-view">
+                        <p><%= pin.comment %></p>
+                      </div>
+                    <% end %>
+                  </td>
+                  <td class="colarrow1">
+                  </td>
+                  <td class="coltimeline">
+                    <div class="timebubble">
+                      <p><%= pin.ad.created_at.to_date %></p>
+                    </div>
+                  </td>
+                  <td class="colarrow2">
+                    <i class="fa fa-arrow-left"></i>
+                  </td>
+                  <td class="colcard">
+                    <div class="ad-card">
+                      <div class="image-div">
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
+                      </div>
+                      <div class="elements-div">
+                        <div class="text-div">
+                          <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                          <h4><%= pin.ad.created_at.to_date %></h4>
+                        </div>
+                        <div class="unpin-btn-placeholder"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+        <% if @dashboard.pins.count > 1 %>
+          <div class="arrow-down"></div>
+        <% end %>
+      </div>
+      <div class='export-container'>
+        <div class='dashboard-comment-view'>
+          <p><U>from:</U> <%= @dashboard.user.first_name %> <%= @dashboard.user.last_name %></p>
+          <p><%= @dashboard.main_comments %></p>
+        </div>
+      </div>
+      <div class="lowerlinks-container">
+        <%= link_to "Back to feed", ads_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %>
+      </div>
+    </div>
+  </div>
+<% end %>
