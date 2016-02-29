@@ -21,6 +21,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'nokogiri'
+gem 'open_uri_redirections'
 
 group :development, :test do
   gem 'binding_of_caller'

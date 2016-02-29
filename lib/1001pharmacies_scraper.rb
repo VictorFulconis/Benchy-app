@@ -16,8 +16,8 @@ class Scraper
     html_file = open("http://#{@competitor.url}", :allow_redirections => :all)
     html_doc = Nokogiri::HTML(html_file)
 
-    html_doc.search(".smart-slider-layer img").each do |element|
-      response = Cloudinary::Uploader.upload(element.attr('data-desktop'))
+    html_doc.search(".bx-viewport img-responsive").each do |element|
+      response = Cloudinary::Uploader.upload(element.attr('src'))
       @competitor.ads.create(cloudinary_public_id: response['public_id'])
     end
   end
