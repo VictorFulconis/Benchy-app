@@ -91,10 +91,10 @@
       <div class='export-container'>
         <div class='dashboard-comment'>
           <%= simple_form_for (@dashboard) do |f| %>
-            <%= f.input :main_comments, placeholder: "Add a message to your team", label: false %>
+            <%= f.input :main_comments, placeholder: "Add a message to your team", label: "message:" %>
             <%= f.submit 'Save your message', class: 'btn-save-comment' %>
-            <%= link_to "Send this dashboard to your team", root_path, class: "btn btn-conf-2 btn-green", style: "width: 100%"  %>
           <% end %>
+          <%= render 'shares/sharesform' %>
         </div>
       </div>
       <div class="lowerlinks-container">
@@ -102,7 +102,6 @@
       </div>
     </div>
   </div>
-  <%= render 'shares/sharesform' %>
 
 <% elsif @type == "viewer" %>
 

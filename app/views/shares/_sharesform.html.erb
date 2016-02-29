@@ -1,6 +1,37 @@
+
+
+<%= simple_form_for [@dashboard, @share] do |f| %>
+  <%= f.error_notification %>
+  <%= f.association :user, label_method: :email, collection: @team, label: 'to:', input_html: {class: 'js-example-basic-multiple', multiple: 'multiple'} %>
+  <%= f.submit 'Send', class: "btn btn-conf btn-green aligncenter" %>
+<% end %>
+
+
+ <% content_for(:after_js)  do %>
+  <%= javascript_tag do %>
+    $(document).ready(function(){
+      $(".js-example-basic-multiple").select2();
+    });
+  <% end %>
+<% end %>
+
+
+<!-- CODE DE BASE SELECT2 -->
+<!--
+<select class="js-example-basic-multiple" multiple="multiple">
+  <% @team.each do |member| %>
+    <option value='<%= member.id %>'> <%= member.email %></option>
+  <% end %>
+</select> -->
+
+
+<!-- VERSION SIMPLE_FORM -->
+
+<!--
 <%= simple_form_for [@dashboard, @share] do |f| %>
   <%= f.error_notification %>
   <%= f.association :user, as: :check_boxes, label_method: :email, collection: User.where(company_name: current_user.company_name), label: "Select a team member" %>
   <%= f.button :submit, class: "btn btn-conf btn-green aligncenter", label: "Save" %>
 <% end %>
 
+ -->
