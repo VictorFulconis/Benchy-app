@@ -84,7 +84,9 @@
           <% end %>
         </tbody>
       </table>
-      <div class="arrow-down"></div>
+      <% if @dashboard.pins.count > 1 %>
+        <div class="arrow-down"></div>
+      <% end %>
     </div>
     <div class='export-container'>
       <div class='dashboard-comment'>
