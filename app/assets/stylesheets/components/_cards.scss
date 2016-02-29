@@ -121,13 +121,21 @@
 .dashboard-card {
   background-color: white;
   position: relative;
-  margin-top: 2em;
-  border-radius: 10px;
+  margin-top: 1.5em;
+  border-radius: 25px;
   display: flex-inline;
   transition: all 0.2s ease-in-out;
-  border: 1px solid #5A5A5A;
+  padding-top: 2em;
+  box-shadow: 1px 1px 2px rgba(100, 100, 100, 0.2);
+
+  .dashboard-icons {
+    padding-right: 1em;
+    padding-bottom: 1em;
+  }
+
   .elements-div {
-    background-color: #F5F5F5;
+    background-color: white;
+        border-radius: 25px;
   }
   &:hover {
     transform: scale(1.1);
@@ -168,11 +176,13 @@
     align-items: center;
     height: 100px;
     width: 500px;
+    background-color: white;
   }
   .text-div {
     text-align: left;
     width: 250px;
     height: 100px;
+    background-color: white;
     p {
       font-size: 12px;
       line-height: 1px;
