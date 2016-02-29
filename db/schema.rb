@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226205650) do
+ActiveRecord::Schema.define(version: 20160229100216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,16 @@ ActiveRecord::Schema.define(version: 20160226205650) do
   add_index "pins", ["ad_id"], name: "index_pins_on_ad_id", using: :btree
   add_index "pins", ["dashboard_id"], name: "index_pins_on_dashboard_id", using: :btree
 
+  create_table "shares", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "dashboard_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "shares", ["dashboard_id"], name: "index_shares_on_dashboard_id", using: :btree
+  add_index "shares", ["user_id"], name: "index_shares_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -92,4 +102,6 @@ ActiveRecord::Schema.define(version: 20160226205650) do
   add_foreign_key "follows", "users"
   add_foreign_key "pins", "ads"
   add_foreign_key "pins", "dashboards"
+  add_foreign_key "shares", "dashboards"
+  add_foreign_key "shares", "users"
 end

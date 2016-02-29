@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :ads, only: [:index, :show] do
     resources :pins, only: [:new, :create]
   end
-  resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update]
+  resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update] do
+    resources :shares, only: [:create]
+  end
   resources :pins, only: [:destroy, :update]
   require "sidekiq/web"
   require 'sidekiq-scheduler/web'

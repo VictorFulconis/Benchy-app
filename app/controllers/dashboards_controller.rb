@@ -2,6 +2,7 @@ class DashboardsController < ApplicationController
   before_action :set_dashboard, only: [:show, :edit, :destroy, :update]
 
   def show
+    @share = Share.new
   end
 
   def edit
