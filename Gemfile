@@ -22,6 +22,9 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'nokogiri'
 gem 'open_uri_redirections'
+gem 'postmark-rails'
+gem "select2-rails"
+
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -30,6 +33,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
+  gem "letter_opener"
 end
 
 group :production do

@@ -14,8 +14,8 @@
     <title>Benchy - Your competition monitoring tool</title>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-
+    <!-- <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+ -->
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -24,6 +24,7 @@
     <%= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
+    <%= yield(:after_js) %>
   </body>
 </html>
 
