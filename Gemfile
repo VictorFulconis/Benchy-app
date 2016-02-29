@@ -21,6 +21,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'nokogiri'
+gem 'postmark-rails'
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -29,6 +30,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
+  gem "letter_opener"
 end
 
 group :production do
