@@ -26,12 +26,12 @@
   margin: 0;
   letter-spacing: 1px;
   padding: 5px 5px;
-      font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 1px;
-    color: #666;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  color: #666;
 }
 
 
@@ -57,4 +57,7 @@
 
 ul {
   list-style-type: none;
+  .fa-trash-o {
+    margin-left: 10px;
+  }
 }
