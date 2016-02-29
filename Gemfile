@@ -21,8 +21,10 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'nokogiri'
+gem 'open_uri_redirections'
 gem 'postmark-rails'
 gem "select2-rails"
+
 
 group :development, :test do
   gem 'binding_of_caller'

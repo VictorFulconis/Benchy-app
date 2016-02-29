@@ -104,6 +104,7 @@ GEM
     netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    open_uri_redirections (0.2.1)
     orm_adapter (0.5.0)
     pg (0.18.4)
     postmark (1.7.1)
@@ -237,6 +238,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   nokogiri
+  open_uri_redirections
   pg
   postmark-rails
   pry-byebug
