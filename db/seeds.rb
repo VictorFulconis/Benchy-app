@@ -131,7 +131,7 @@ user = User.new(
   )
 user.save
 dashboard = Dashboard.new(
-  name: "My first dashboard",
+  name: "My second dashboard",
   user_id: user.id
   )
 dashboard.save

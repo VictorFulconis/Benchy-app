@@ -14,7 +14,9 @@
                 <tr>
                   <td class="colcard">
                     <div class="ad-card">
-                      <div class="image-div">
+<!--                       <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
+                      </div>
+ -->                      <div class="image-div">
                         <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
                       </div>
                       <div class="elements-div">

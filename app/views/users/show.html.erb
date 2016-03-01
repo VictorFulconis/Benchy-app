@@ -68,44 +68,57 @@
                 <h4><strong>My dashboards</strong></h4>
                 </div>
             </div>
-                <div class="feed-container">
-                    <div class="row">
-                       <% @user.dashboards.each do |dashboard| %>
-                        <div class="col-xs-12 col-md-6">
-                          <div class="dashboard-card text-center" >
-
-                            <%= link_to dashboard_path(dashboard), class:"img-responsive" do %>
-                              <%= cl_image_tag(dashboard.ads.first.cloudinary_public_id, width: 300, height: 100, crop: :scale) %>
+            <div class="feed-container">
+              <div class="row">
+                <% @created_dashboards.each do |dashboard| %>
+                  <div class="col-xs-12 col-md-6">
+                    <div class="dashboard-card text-center" >
+                      <%= link_to dashboard_path(dashboard), class:"img-responsive" do %>
+                        <%= cl_image_tag(dashboard.ads.first.cloudinary_public_id, width: 300, height: 100, crop: :scale) %>
+                      <% end %>
+                      <div class="elements-div text-center ">
+                        <div class="text-div">
+                          <h4><%= dashboard.name.capitalize %></h4>
+                          <div class="dashboard-link">
+                            <%= link_to dashboard_path(dashboard), method: "get" do %>
+                              <i class="fa fa-eye dashboard-icons"></i>
                             <% end %>
-
-                            <div class="elements-div text-center ">
-                              <div class="text-div">
-                                <h4><%= dashboard.name.capitalize %></h4>
-
-
-                                <div class="dashboard-link">
-                                <%= link_to dashboard_path(dashboard), method: "get" do %>
-                                  <i class="fa fa-eye dashboard-icons"></i>
-                                <% end %>
-                                <%= link_to edit_dashboard_path(dashboard), method: "get" do %>
-                                  <i class="fa fa-pencil dashboard-icons"></i>
-                                <% end %>
-                                <%= link_to dashboard_path(dashboard), method: "delete" do %>
-                                  <i class="fa fa-trash-o"></i>
-                                <% end %>
-                                </div>
-
-                              </div>
-                            </div>
+                            <%= link_to edit_dashboard_path(dashboard), method: "get" do %>
+                              <i class="fa fa-pencil dashboard-icons"></i>
+                            <% end %>
+                            <%= link_to dashboard_path(dashboard), method: "delete" do %>
+                              <i class="fa fa-trash-o"></i>
+                            <% end %>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <% end %>
+                  </div>
+                <% end %>
+                <% @shared_dashboards.each do |dashboard| %>
+                  <div class="col-xs-12 col-md-6">
+                    <div class="dashboard-card text-center" >
+                      <%= link_to dashboard_path(dashboard), class:"img-responsive" do %>
+                        <%= cl_image_tag(dashboard.ads.first.cloudinary_public_id, width: 300, height: 100, crop: :scale) %>
+                      <% end %>
+                      <div class="elements-div text-center ">
+                        <div class="text-div">
+                          <h4><%= dashboard.name.capitalize %></h4>
+                          <div class="dashboard-link">
+                            <%= link_to dashboard_path(dashboard), method: "get" do %>
+                              <i class="fa fa-eye dashboard-icons"> from: <%= dashboard.user.first_name %></i>
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-
-                </div>
+                  </div>
+                <% end %>
               </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
