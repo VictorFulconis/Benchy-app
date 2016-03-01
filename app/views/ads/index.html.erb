@@ -23,7 +23,9 @@
                     <p><%= ad.created_at.to_date %></p>
                   </button>
                   <%= link_to new_ad_pin_path(ad) do %>
-                    <button class="pin-btn">+</button>
+                    <button class="pin-btn">
+                      <i class="fa fa-thumb-tack"></i>
+                    </button>
                   <% end %>
                 </div>
 
@@ -43,7 +45,9 @@
                       <p><%= ad.created_at.to_date %></p>
                     </div>
                     <%= link_to new_ad_pin_path(ad) do %>
-                      <button class="pin-btn">+</button>
+                      <button class="pin-btn">
+                        <i class="fa fa-thumb-tack"></i>
+                      </button>
                     <% end %>
                   </div>
                 </div>

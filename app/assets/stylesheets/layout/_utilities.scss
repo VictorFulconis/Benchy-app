@@ -25,8 +25,8 @@
   background: #3b5998;
 }
 
-button:active, button:focus, button:visited {
-  outline: none;
+a:active, a:focus, a:visited, button:active, button:focus, button:visited {
+  outline: 0;
 }
 
 

@@ -25,3 +25,22 @@
 .btn-download {
   background: #FDE3A7;
 }
+
+.btn-success {
+  border-radius: 50%;
+  margin-left: 1em;
+  color: #fff;
+  background-color: #2cd5c4;
+  border-color: #2cd5c4;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: #56DDCE;
+    border-color: #2cd5c4;
+    transform: scale(1.05);
+  }
+}
+
+
+.btn-pricing {
+  margin-bottom: 2em;
+}
