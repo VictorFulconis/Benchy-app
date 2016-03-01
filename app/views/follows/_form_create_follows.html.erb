@@ -1,7 +1,7 @@
 <%= simple_form_for (@competitor) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :name, as: :string, value: :name, label: "Add a new competitor"%>
+  <%= f.input :name, as: :string, value: :name %>
   <%= f.input :url, as: :string, value: :url %>
-  <%= f.button :submit, class: "btn btn-conf btn-green aligncenter", label: "Create" %>
+  <%= f.submit "Follow", class: "btn btn-conf btn-green aligncenter" %>
 <% end %>
 

@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "registrations"}
   root to: "pages#home"
   resources :users, only: [:show, :edit, :update]
-  resources :competitors, only: [:new, :create, :edit, :update]
-  resources :follows, only: [:new, :create, :destroy]
+  resources :competitors, only: [:new, :create, :update]
+  resources :follows, only: [:new, :destroy]
   resources :ads, only: [:index, :show] do
     resources :pins, only: [:new, :create]
   end
-  resources :dashboards, only: [:new, :create, :show, :destroy, :edit, :update] do
+  resources :pins, only: [:destroy, :update]
+  resources :dashboards, only: [:show, :destroy, :edit, :update] do
     resources :shares, only: [:create]
   end
-  resources :pins, only: [:destroy, :update]
   require "sidekiq/web"
   require 'sidekiq-scheduler/web'
   authenticate :user, lambda { |u| u.email == 'b@gmail.com' } do

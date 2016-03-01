@@ -5,16 +5,15 @@ class CompetitorsController < ApplicationController
   end
 
   def create
-    @competitor = Competitor.new(competitor_params)
-    if @competitor.save
-       @follow = Follow.new(competitor_id: @competitor.id, user_id: current_user.id)
-       if @follow.save
-        redirect_to user_path(current_user)
-      else
-        render :new
-      end
+    if Competitor.exists?(url: competitor_params[:url])
+      @competitor = Competitor.find_by url: competitor_params[:url]
+      Follow.create(user_id: current_user.id, competitor_id: @competitor.id)
+      redirect_to user_path(current_user), notice: "This competitor already exists, you can see already see its activity in your feed"
     else
-      render :new
+      @competitor = Competitor.new(competitor_params)
+      @competitor.save
+      Follow.create(user_id: current_user.id, competitor_id: @competitor.id)
+      redirect_to user_path(current_user), notice: "This is a new competitor, we need a little time to set it up, you will start receving activity in your feed from tomorrow"
     end
   end
 
@@ -24,11 +23,6 @@ class CompetitorsController < ApplicationController
     redirect_to competitors_path
   end
 
-  def destroy
-    @competitor = Competitor.find(params[:id])
-    @competitor.delete
-    redirect_to root_path
-  end
 
 private
 
