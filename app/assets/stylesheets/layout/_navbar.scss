@@ -8,6 +8,15 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+
+}
+
+.pages-home .navbar-wagon {
+  position: absolute;
+    left: 0;
+    right: 0;
+    background: none;
+    box-shadow: none;
 }
 
 /* Optional class to fix the navbar on top */
@@ -24,6 +33,11 @@
      width: 15%;
 }
 
+.pages-home .navbar-wagon-brand img {
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+
+}
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;

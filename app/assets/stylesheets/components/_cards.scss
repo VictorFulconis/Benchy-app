@@ -43,18 +43,22 @@
     }
   }
   .pin-btn {
-    background-color: red;
+    background-color: #2cd5c4;
     width: 25px;
     height: 25px;
     border-radius: 50%;
     color: white;
     transition: color 0.1s ease-in-out;
     &:hover {
-      color: grey;
-    }
+    background-color: #56DDCE;
+    border-color: #2cd5c4;
+    transform: scale(1.05);    }
   }
 }
 
+.pin-btn .fa-thumb-tack {
+  font-size: small;
+}
 
 .feed-container .ad-card-modal {
   border: 1px solid rgb(230, 230, 230);

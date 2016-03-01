@@ -1,4 +1,9 @@
 /* Pricing Tables */
+
+.pricing-container {
+  margin-bottom: 3em;
+}
+
 .price-table {
   border-radius: 5px;
   padding-top: 15px;
@@ -8,6 +13,10 @@
   background-color: white;
   box-shadow: 1px 1px 2px rgba(100, 100, 100, 0.2);
 
+}
+
+#business {
+  transform: scale(1.05);
 }
 
 .price-table .p-head {
@@ -34,6 +43,9 @@
   color: #666;
 }
 
+#p-body-home {
+  opacity: 0.5;
+}
 
 .p-body .price .detail {
   font-weight: 700;

@@ -1,11 +1,12 @@
 /* HEADER SECTION */
 .banner {
-background-image: image-url('header-.jpg');
-  background-size: cover !important;
-  background-color: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
-align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(/assets/header-3-28921646b893d740fdaef9b0c03aa6cdf3e726f59c81583eec27813bbbb2204d.jpg);
+    background-size: cover !important;
+  align-items: center;
   justify-content: center;
+  display: flex;
 }
+
 
 
 #h {
@@ -13,7 +14,7 @@ align-items: center;
   text-align:center;
   background-attachment: relative;
   background-position: center center;
-  min-height: 700px;
+  min-height: 100vh;
   width: 100%;
   color: white;
 
@@ -55,6 +56,8 @@ align-items: center;
   font-weight: 700;
   color: white;
   font-size: 40px;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+}
 }
 
 /* Store Links */
