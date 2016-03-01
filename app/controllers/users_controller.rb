@@ -25,6 +25,13 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     @user.save
+    if Competitor.exists?(url: @user.company_url)
+      @competitor = Competitor.find_by url:@user.company_url
+    else
+      @competitor = Competitor.new(name: @user.company_name, url: @user.company_url, scraping_parameters: "")
+      @competitor.save
+    end
+    @user.follows.create(competitor_id: @competitor.id)
     redirect_to user_path(@user)
   end
 

@@ -3,14 +3,14 @@
     <div class="container form">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-          <h2 class="text-center">Compléte ton profil</h2>
+          <h2 class="text-center">Complete your profile</h2>
           <%= simple_form_for (@user) do |f| %>
             <%= f.error_notification %>
-            <%= f.input :first_name, placeholder: "Michel", label: "Prénom", required: true %>
-            <%= f.input :last_name, placeholder: "Dupont", label: "Nom", required: true %>
-            <%= f.input :company_name, placeholder: "Example", label: "Nom de votre entreprise", required: true %>
-            <%= f.input :company_url, placeholder: "www.example.com", label: "Site web de votre entreprise", required: true %>
-            <%= f.button :submit, class: "btn btn-conf-2 btn-green", style: "width: 100%", value: "Enregistrer les modifications" %>
+            <%= f.input :first_name, placeholder: "Michel", label: "First name", required: true %>
+            <%= f.input :last_name, placeholder: "Dupont", label: "Last name", required: true %>
+            <%= f.input :company_name, placeholder: "Example", label: "Your company's name", required: true %>
+            <%= f.input :company_url, placeholder: "www.example.com", label: "Your website URL", required: true %>
+            <%= f.button :submit, class: "btn btn-conf-2 btn-green", style: "width: 100%", value: "Save modifications" %>
           <% end %>
         </div>
       </div>
