@@ -7,7 +7,7 @@ require 'nokogiri'
 #   curl element.img.url > element.img.name.jpg
 # end
 
-class Scraper
+class PowerSanteScraper
   def initialize(competitor)
     @competitor = competitor
   end
