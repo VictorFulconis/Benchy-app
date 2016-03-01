@@ -3,13 +3,16 @@
   width: 1400px;
   border-collapse: separate;
   border-spacing: 50px 0px;
+  textarea {
+    resize: none;
+  }
   .coltimeline {
-  background-color: #537780;
-  color: white;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  color: black;
   width: 50px;
   padding: 5px;
     p {
-      color: white;
       font-size: 12px;
     }
   }
@@ -47,9 +50,21 @@
 .export-container {
   width: 800px;
   margin: 100px auto;
-  border: 1px solid grey;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   border-radius: 5px;
   padding: 20px;
+  textarea {
+    resize: none;
+    background-color: #EEEEEE;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    border: none;
+  }
+  .select2-selection {
+    background-color: #EEEEEE;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  }
   .btn-save-comment {
     border: none;
     background-color: #F5F5F5;
@@ -76,7 +91,7 @@
   height: 0;
   border-left: 46px solid transparent;
   border-right: 46px solid transparent;
-  border-top: 100px solid #537780;
+  border-top: 100px solid white;
   background-color: #F5F5F5;
   margin: 0 auto;
 }
