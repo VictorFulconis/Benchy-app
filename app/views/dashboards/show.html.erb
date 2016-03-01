@@ -22,7 +22,7 @@
                       <div class="elements-div">
                         <div class="text-div">
                           <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                          <h4><%= pin.ad.created_at.to_date %></h4>
+                          <!-- <h4><%= pin.ad.created_at.to_date %></h4> -->
                         </div>
                         <h4><%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn"  %></h4>
                       </div>
@@ -32,17 +32,17 @@
                     <i class="fa fa-arrow-right"></i>
                   </td>
                   <td class="coltimeline">
-                    <div class="timebubble">
-                      <p><%= pin.ad.created_at.to_date %><p>
+                    <div class="timebubble text-center">
+                      <h4><strong><%= pin.ad.created_at.to_date.year %>/<%= pin.ad.created_at.to_date.month %>/<%= pin.ad.created_at.to_date.day %></strong><h4>
                     </div>
                   </td>
                   <td class="colarrow2">
                   </td>
                   <td class="colcomment">
-                    <div class="comment">
+                    <div class="comment text-center">
                       <%= simple_form_for (pin) do |f| %>
                         <%= f.input :comment, placeholder: "Add a comment", label: false %>
-                        <%= f.submit 'Save', class: 'btn-save-comment' %>
+                        <%= f.submit 'Save', class: 'btn-save-comment btn btn-conf btn-green' %>
                       <% end %>
                     </div>
                   </td>
@@ -50,10 +50,10 @@
               <% else %>
                 <tr>
                   <td class="colcomment">
-                    <div class="comment">
+                    <div class="comment text-center">
                       <%= simple_form_for (pin) do |f| %>
                         <%= f.input :comment, placeholder: "Add a comment", label: false %>
-                        <%= f.submit 'Save', class: 'btn-save-comment' %>
+                        <%= f.submit 'Save', class: 'btn-save-comment btn btn-conf btn-green' %>
                       <% end %>
                     </div>
                   </td>
@@ -61,7 +61,7 @@
                   </td>
                   <td class="coltimeline">
                     <div class="timebubble">
-                      <p><%= pin.ad.created_at.to_date %></p>
+                      <h4><strong><%= pin.ad.created_at.to_date.year %>/<%= pin.ad.created_at.to_date.month %>/<%= pin.ad.created_at.to_date.day %></strong><h4>
                     </div>
                   </td>
                   <td class="colarrow2">

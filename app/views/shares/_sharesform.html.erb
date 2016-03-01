@@ -3,7 +3,7 @@
 <%= simple_form_for [@dashboard, @share] do |f| %>
   <%= f.error_notification %>
   <%= f.association :user, label_method: :email, collection: @team, label: 'to:', input_html: {class: 'js-example-basic-multiple', multiple: 'multiple'} %>
-  <%= f.submit 'Send', class: "btn btn-conf btn-green aligncenter" %>
+  <%= f.submit 'Send', class: "btn btn-conf btn-green aligncenter", id: "btn-send" %>
 <% end %>
 
 
