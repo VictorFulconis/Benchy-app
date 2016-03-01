@@ -30,8 +30,7 @@ class DashboardsController < ApplicationController
   end
 
   def destroy
-    @dashboard.pins.destroy_all
-    @dashboard.delete
+    @dashboard.destroy
     redirect_to user_path(current_user)
   end
 

@@ -1,7 +1,7 @@
 <%= simple_form_for (@competitor) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :name, as: :string, value: :name %>
-  <%= f.input :url, as: :string, value: :url %>
+  <%= f.input :name, as: :string, value: :name, required: true %>
+  <%= f.input :url, as: :string, required: true, value: :url %>
   <%= f.submit "Follow", class: "btn btn-conf btn-green aligncenter" %>
 <% end %>
 

@@ -1,4 +1,5 @@
 class CompetitorsController < ApplicationController
+  before_action :competitor_params
 
   def new
     @competitor = Competitor.new
@@ -7,8 +8,12 @@ class CompetitorsController < ApplicationController
   def create
     if Competitor.exists?(url: competitor_params[:url])
       @competitor = Competitor.find_by url: competitor_params[:url]
-      Follow.create(user_id: current_user.id, competitor_id: @competitor.id)
-      redirect_to user_path(current_user), notice: "This competitor already exists, you can see already see its activity in your feed"
+      if @competitor.follows.exists?(user_id: current_user)
+        redirect_to user_path(current_user), notice: "Your are already following this competitor :)"
+      else
+        Follow.create(user_id: current_user.id, competitor_id: @competitor.id)
+        redirect_to user_path(current_user), notice: "This competitor already exists, you can see its activity in your feed right now"
+      end
     else
       @competitor = Competitor.new(competitor_params)
       @competitor.save
@@ -27,8 +32,9 @@ class CompetitorsController < ApplicationController
 private
 
   def competitor_params
+    params[:competitor][:name].downcase!
+    params[:competitor][:url].downcase!
     params.require(:competitor).permit(:name, :url)
   end
-
 end
 
