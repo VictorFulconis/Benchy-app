@@ -5,7 +5,7 @@
 .feed-container .ad-card {
   border: 1px solid rgb(230, 230, 230);
   border-radius: 5px;
-  box-shadow: 1px 1px 2px rgba(100,100, 100, 0.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   width: 275px;
   height: 200px;
   margin: 20px;
@@ -63,7 +63,7 @@
   width: 850px;
   height: 400px;
   background-color: white;
-  box-shadow: 1px 1px 2px rgba(100,100, 100, 0.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   .image-div {
     border-bottom: 0.5px dashed rgb(230, 230, 230);
   }
@@ -126,7 +126,7 @@
   display: flex-inline;
   transition: all 0.1s ease-in-out;
   padding-top: 2em;
-  box-shadow: 1px 1px 2px rgba(100, 100, 100, 0.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 
   .dashboard-icons {
     padding-right: 1em;
@@ -158,7 +158,7 @@
 .timeline-container .ad-card {
   border: 1px solid rgb(230, 230, 230);
   border-radius: 5px;
-  box-shadow: 1px 1px 2px rgba(100,100, 100, 0.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   width: 500px;
   height: 300px;
   background-color: white;
