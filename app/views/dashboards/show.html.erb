@@ -8,7 +8,7 @@
         <table>
           <tbody>
             <% @count = 0 %>
-            <% @dashboard.pins.each do |pin| %>
+            <% @pins.each do |pin| %>
               <% @count += 1 %>
               <% if @count%2 != 0 %>
                 <tr>
@@ -116,7 +116,7 @@
         <table>
           <tbody>
             <% @count = 0 %>
-            <% @dashboard.pins.each do |pin| %>
+            <% @pins.each do |pin| %>
               <% @count += 1 %>
               <% if @count%2 != 0 %>
                 <tr>

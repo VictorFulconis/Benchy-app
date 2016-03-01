@@ -5,7 +5,6 @@ class AdsController < ApplicationController
     @pin = Pin.new
     @search = params[:search]
     @ads = current_user.ads
-
     if @search.present?
       @ads = @ads.search(@search)
     end

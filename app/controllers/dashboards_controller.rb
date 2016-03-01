@@ -6,6 +6,7 @@ class DashboardsController < ApplicationController
     @share = Share.new
     if Dashboard.exists?(params[:id])
       @dashboard = Dashboard.find(params[:id])
+      @pins = @dashboard.pins.sort_by{|p| p.ad.created_at}.reverse
       if @dashboard.user_id == current_user.id
         @type = "owner"
       elsif @dashboard.shares.exists?(user_id: current_user.id)
