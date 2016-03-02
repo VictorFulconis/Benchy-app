@@ -6,7 +6,7 @@ class SharesController < ApplicationController
         @share = Share.new(dashboard_id: params[:dashboard_id], user_id: user_id)
         @share.save
       end
-      ShareMailer.creation_confirmation(@share).deliver_now
+      # ShareMailer.creation_confirmation(@share).deliver_now
     end
     redirect_to dashboard_path(params[:dashboard_id]), notice: "The dashboard has been shared, your team mates will be warned shortly."
   end
