@@ -163,7 +163,8 @@
   border: 1px solid rgb(230, 230, 230);
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-  width: 500px;
+  width: 90%;
+  // was 500px
   height: 300px;
   background-color: white;
   transition: all 0.1s ease-in-out;
@@ -171,7 +172,6 @@
     transform: scale(1.05);
   }
   .image-div {
-    margin-left: 10px;
     border-bottom: 0.5px dashed rgb(230, 230, 230);
   }
   .elements-div {
