@@ -1,18 +1,22 @@
 <div class="page-wrapper">
   <div class="page-container">
-    <div class="feed-container">
+
+    <div class="timeline-container">
+    </div>
+
+    <div class="feed-container ads-container">
       <div class="container">
         <div class="row">
           <% @count = 0 %>
           <% @ads.order(created_at: :desc).each do |ad| %>
            <% @count += 1 %>
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="col-xs-6 col-sm-3">
               <div class="ad-card" >
 
-                <button class="image-div" data-toggle="modal" data-target="#ad-detail<%= @count %>" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
+                <button class="image-div" data-toggle="modal" data-target="#ad-detail<%= @count %>">
+                  <%= cl_image_tag(ad.cloudinary_public_id, width: 250, height: 140, crop: :pad) %>
                 </button>
-<!--          <%= cl_image_tag(ad.cloudinary_public_id, width: 250, height: 140, crop: :pad) %>
- -->
+
                 <div class="elements-div">
                   <button class="text-div" data-toggle="modal" data-target="#ad-detail<%= @count %>">
                     <h5><%= ad.competitor.name.capitalize %></h5>
