@@ -1,6 +1,11 @@
+
+.timeline-table {
+  width: 100%;
+}
+
 .timeline-container table {
   margin: 50px auto 0 auto;
-  width: 1400px;
+  width: 100%;
   border-collapse: separate;
   border-spacing: 50px 0px;
   textarea {
@@ -12,19 +17,19 @@
   color: black;
   opacity: 0.4;
   width: 50px;
-  padding: 5px;
+  padding: 20px;
     p {
       font-size: 12px;
     }
   }
   .colcard {
-    width: 450px;
+    width: 350px;
   }
 
   .colcomment {
-    width: 450px;
+    width: 350px;
     .comment-view {
-      width: 450px;
+      width: 3ç50px;
       background-color: #EEEEEE;
       font-style: italic;
       border-radius: 5px;
@@ -34,6 +39,9 @@
       background-color: #EEEEEE;
       border: none;
       font-style: italic;
+          padding-top: 30px;
+    margin-top: 80px;
+
     }
     .btn-save-comment {
       visibility: hidden;
@@ -100,9 +108,9 @@
 .arrow-down {
   width: 0;
   height: 0;
-  border-left: 46px solid transparent;
-  border-right: 46px solid transparent;
-  border-top: 100px solid white;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-top: 100px solid #F9F9F9;
   background-color: #F5F5F5;
   margin: 0 auto;
 }

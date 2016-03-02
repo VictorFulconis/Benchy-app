@@ -5,7 +5,7 @@
         <h1><%= @dashboard.name.capitalize %></h1>
       </div>
       <div class="timeline-container">
-        <table>
+        <table class="timeline-tab">
           <tbody>
             <% @count = 0 %>
             <% @pins.each do |pin| %>
@@ -17,23 +17,21 @@
 <!--                       <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
  -->                      <div class="image-div">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
-                      </div>
+                            <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 350, height: 200, crop: :pad) %>
+                         </div>
                       <div class="elements-div">
-                        <div class="text-div">
-                          <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                      <h4><%= pin.ad.competitor.name.capitalize %></h4>
                           <!-- <h4><%= pin.ad.created_at.to_date %></h4> -->
-                        </div>
-                        <h4><%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn"  %></h4>
+                        <%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn"  %>
                       </div>
                     </div>
                   </td>
                   <td class="colarrow1">
-                    <i class="fa fa-arrow-right"></i>
+                    <i class="fa fa-angle-right"></i>
                   </td>
-                  <td class="coltimeline">
+                  <td class="coltimeline text-center">
                     <div class="timebubble text-center">
-                      <h4><strong><%= pin.ad.created_at.to_date.year %>/<%= pin.ad.created_at.to_date.month %>/<%= pin.ad.created_at.to_date.day %></strong><h4>
+                      <h4><%= pin.ad.created_at.strftime("%d/%m/%Y") %><h4>
                     </div>
                   </td>
                   <td class="colarrow2">
@@ -59,25 +57,22 @@
                   </td>
                   <td class="colarrow1">
                   </td>
-                  <td class="coltimeline">
+                  <td class="coltimeline text-center">
                     <div class="timebubble">
-                      <h4><strong><%= pin.ad.created_at.to_date.year %>/<%= pin.ad.created_at.to_date.month %>/<%= pin.ad.created_at.to_date.day %></strong><h4>
+                      <h4><%= pin.ad.created_at.strftime("%d/%m/%Y") %><h4>
                     </div>
                   </td>
                   <td class="colarrow2">
-                    <i class="fa fa-arrow-left"></i>
+                    <i class="fa fa-angle-left"></i>
                   </td>
                   <td class="colcard">
                     <div class="ad-card">
                       <div class="image-div">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 350, height: 200, crop: :pad) %>
                       </div>
                       <div class="elements-div">
-                        <div class="text-div">
-                          <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                          <h4><%= pin.ad.created_at.to_date %></h4>
-                        </div>
-                        <h4><%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn" %></h4>
+                        <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                        <%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn" %>
                       </div>
                     </div>
                   </td>
@@ -123,21 +118,18 @@
                   <td class="colcard">
                     <div class="ad-card">
                       <div class="image-div">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 350, height: 200, crop: :pad) %>
                       </div>
                       <div class="elements-div">
-                        <div class="text-div">
-                          <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                          <h4><%= pin.ad.created_at.to_date %></h4>
-                        </div>
+                        <h4><%= pin.ad.competitor.name.capitalize %></h4>
                         <div class="unpin-btn-placeholder"></div>
                       </div>
                     </div>
                   </td>
                   <td class="colarrow1">
-                    <i class="fa fa-arrow-right"></i>
+                    <i class="fa fa-angle-right"></i>
                   </td>
-                  <td class="coltimeline">
+                  <td class="coltimeline text-center">
                     <div class="timebubble">
                       <p><%= pin.ad.created_at.to_date %><p>
                     </div>
@@ -163,24 +155,22 @@
                   </td>
                   <td class="colarrow1">
                   </td>
-                  <td class="coltimeline">
+                  <td class="coltimeline text-center">
                     <div class="timebubble">
                       <p><%= pin.ad.created_at.to_date %></p>
                     </div>
                   </td>
                   <td class="colarrow2">
-                    <i class="fa fa-arrow-left"></i>
+                    <i class="fa fa-angle-left"></i>
                   </td>
                   <td class="colcard">
                     <div class="ad-card">
                       <div class="image-div">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 480, height: 200, crop: :pad) %>
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 350, height: 200, crop: :pad) %>
                       </div>
                       <div class="elements-div">
-                        <div class="text-div">
-                          <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                          <h4><%= pin.ad.created_at.to_date %></h4>
-                        </div>
+                        <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                      </div>
                         <div class="unpin-btn-placeholder"></div>
                       </div>
                     </div>
