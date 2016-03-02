@@ -276,16 +276,16 @@ Follow.create(
   user_id: user.id,
   competitor_id: competitor.id,
   )
-competitor = Competitor.new(
-  name: "santemoinschere",
-  url: "www.santemoinschere.com",
-  scrapper_class: "SanteMoinsChereScraper",
-  )
-competitor.save
-Follow.create(
-  user_id: user.id,
-  competitor_id: competitor.id,
-  )
+# competitor = Competitor.new(
+#   name: "santemoinschere",
+#   url: "www.santemoinschere.com",
+#   scrapper_class: "SanteMoinsChereScraper",
+#   )
+# competitor.save
+# Follow.create(
+#   user_id: user.id,
+#   competitor_id: competitor.id,
+#   )
 competitor = Competitor.new(
   name: "UniversPara",
   url: "www.universpara.com",
