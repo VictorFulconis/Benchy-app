@@ -10,28 +10,32 @@
   border-spacing: 50px 0px;
   textarea {
     resize: none;
-    width: 90%;
+    width: 100%;
     // was 350px
   }
   .coltimeline {
   background-color: white;
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   color: black;
-  opacity: 0.4;
-  width: 50px;
-  padding: 20px;
-    p {
-      font-size: 12px;
+  width: 10%;
+  // was 50px;
+  padding: 2px;
+    h4 {
+      font-size: 18px;
+      opacity: 0.4;
     }
   }
   .colcard {
-    width: 350px;
+    width: 40%;
+    // was 350px;
   }
 
   .colcomment {
-    width: 350px;
+    width: 40%;
+    // was 350px;
     .comment-view {
-      width: 350px;
+      width: 40%;
+      // was 350px;
       background-color: #EEEEEE;
       font-style: italic;
       border-radius: 5px;
@@ -60,7 +64,8 @@
   }
 
   .colarrow1, .colarrow2 {
-    width: 125px;
+    width: 5%;
+    // was 125px;
     i {
       font-size: 30px;
     }
