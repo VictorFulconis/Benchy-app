@@ -316,7 +316,7 @@ User.create(
   password: "aaaabbbb",
   first_name: "admin",
   last_name: "Benchy",
-  company_url: "www.benchy-app.com",
+  company_url: "www.benchy.me",
   company_name: "Benchy",
   )
 
