@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 # SEED INITIALE
 
 # user = User.new(
@@ -234,8 +226,9 @@ competitor = Competitor.new(
 competitor.save
 Follow.create(
   user_id: user.id,
-  competitor_id: competitor.id,
+  competitor_id: competitor.id
   )
+follow.save
 competitor = Competitor.new(
   name: "Easy parapharmacie",
   url: "www.easyparapharmacie.com",
@@ -276,16 +269,6 @@ Follow.create(
   user_id: user.id,
   competitor_id: competitor.id,
   )
-# competitor = Competitor.new(
-#   name: "santemoinschere",
-#   url: "www.santemoinschere.com",
-#   scrapper_class: "SanteMoinsChereScraper",
-#   )
-# competitor.save
-# Follow.create(
-#   user_id: user.id,
-#   competitor_id: competitor.id,
-#   )
 competitor = Competitor.new(
   name: "UniversPara",
   url: "www.universpara.com",
