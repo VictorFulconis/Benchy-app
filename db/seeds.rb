@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 # SEED INITIALE
 
 # user = User.new(
@@ -227,8 +219,6 @@ user = User.new(
   )
 user.save
 competitor = Competitor.new(
-  # name: "amazon",
-  # url: "www.amazon.fr",
   name: "1001Pharmacies",
   url: "www.1001pharmacies.com",
   scrapper_class: "MilleUnePharmaciesScraper",
@@ -239,21 +229,7 @@ Follow.create(
   competitor_id: competitor.id
   )
 follow.save
-images_url = ["k1rb2hq1sh8jqkosvlyi", "duj3gymo2hdseug0ipp5", "dmas2cpdkoyul4o5edhk", "k1rb2hq1sh8jqkosvlyi", "duj3gymo2hdseug0ipp5", "dmas2cpdkoyul4o5edhk"]
-images_url.each do |image|
-  Ad.create(
-    cloudinary_public_id: image,
-    competitor_id: competitor.id
-    )
-end
-# competitor = Competitor.new(
-#   # name: "cdiscount",
-#   # url: "www.cdiscount.fr",
-#   # competitor_id: competitor.id,
-#   )
 competitor = Competitor.new(
-  # name: "fnac",
-  # url: "www.fnac.com",
   name: "Easy parapharmacie",
   url: "www.easyparapharmacie.com",
   scrapper_class: "EasyParapharmacieScraper",
@@ -264,8 +240,6 @@ Follow.create(
   competitor_id: competitor.id,
   )
 competitor = Competitor.new(
-  # name: "priceminister",
-  # url: "www.priceminister.com",
   name: "Parashop",
   url: "www.parashop.com",
   scrapper_class: "ParashopScraper",
@@ -276,8 +250,6 @@ Follow.create(
   competitor_id: competitor.id,
   )
 competitor = Competitor.new(
-  # name: "amazon",
-  # url: "www.amazon.fr",
   name: "Pharmashopdiscount",
   url: "www.pharmashopdiscount.com",
   scrapper_class: "PharmashopDiscountScraper",
@@ -288,8 +260,6 @@ Follow.create(
   competitor_id: competitor.id,
   )
 competitor = Competitor.new(
-  # name: "cdiscount",
-  # url: "www.cdiscount.fr",
   name: "Powersante",
   url: "www.powersante.com",
   scrapper_class:"PowerSanteScraper",
@@ -300,20 +270,6 @@ Follow.create(
   competitor_id: competitor.id,
   )
 competitor = Competitor.new(
-  # name: "fnac",
-  # url: "www.fnac.fr",
-  name: "santemoinschere",
-  url: "www.santemoinschere.com",
-  scrapper_class: "SanteMoinsChereScraper",
-  )
-competitor.save
-Follow.create(
-  user_id: user.id,
-  competitor_id: competitor.id,
-  )
-competitor = Competitor.new(
-  # name: "priceminister",
-  # url: "www.priceminister.fr",
   name: "UniversPara",
   url: "www.universpara.com",
   scrapper_class: "UniversParaScraper",

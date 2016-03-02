@@ -6,6 +6,10 @@
 }
 
 
+.pin-title {
+      margin-bottom: 50px;
+}
+
 .pin-div {
   margin-bottom: 1em;
 }
@@ -14,8 +18,16 @@
    display: flex;
   vertical-align: middle;
   margin-top: 1em;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 10px 0;
+  margin: 20px;
 }
 
+.pin_it {
+  margin-left: auto;
+}
 
 .pin-button {
     color: #fff;
