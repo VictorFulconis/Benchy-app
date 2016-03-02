@@ -5,6 +5,6 @@ Hi <%= @share.user.first_name %>,
 <%= @share.dashboard.user.first_name %> <%= @share.dashboard.user.last_name %> just shared the dashboard "<%= @share.dashboard.name %>" with you.
 
 Please click on the link below to access it:
-http://www.benchy.me/dashboards/<%= @share.dashboard_id %>
+<%= dashboard_url(@share.dashboard) %>
 
 Enjoy !

@@ -6,7 +6,7 @@
 <p>
   <%= @share.dashboard.user.first_name %> <%= @share.dashboard.user.last_name %> just shared the dashboard "<%= @share.dashboard.name %>" with you.
   Please click on the link below to access it:
-  <a href="http://www.benchy.me/dashboards/#{@share.dashboard_id}"></a>
+  <%= link_to dashboard_url(@share.dashboard), dashboard_url(@share.dashboard) %>
 
 </p>
 
