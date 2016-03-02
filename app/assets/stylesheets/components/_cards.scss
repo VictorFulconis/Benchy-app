@@ -163,7 +163,7 @@
   border: 1px solid rgb(230, 230, 230);
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-  width: 90%;
+  width: 100%;
   // was 500px
   height: 300px;
   background-color: white;
@@ -173,6 +173,7 @@
   }
   .image-div {
     border-bottom: 0.5px dashed rgb(230, 230, 230);
+    width: 90%;
   }
   .elements-div {
     display: flex;

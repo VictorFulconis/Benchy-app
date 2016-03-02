@@ -17,7 +17,7 @@
 <!--                       <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
  -->                      <div class="image-div text-center">
-                            <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 315, height: 200, crop: :pad) %>
+                            <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 300, height: 200, crop: :pad) %>
                          </div>
                       <div class="elements-div">
                       <h4><%= pin.ad.competitor.name.capitalize %></h4>
@@ -68,7 +68,7 @@
                   <td class="colcard">
                     <div class="ad-card">
                       <div class="image-div text-center">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 315, height: 200, crop: :pad) %>
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 300, height: 200, crop: :pad) %>
                       </div>
                       <div class="elements-div">
                         <h4><%= pin.ad.competitor.name.capitalize %></h4>
