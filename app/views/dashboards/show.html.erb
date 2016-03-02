@@ -16,7 +16,7 @@
                     <div class="ad-card">
 <!--                       <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
- -->                      <div class="image-div">
+ -->                      <div class="image-div text-center">
                             <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 350, height: 200, crop: :pad) %>
                          </div>
                       <div class="elements-div">
@@ -67,7 +67,7 @@
                   </td>
                   <td class="colcard">
                     <div class="ad-card">
-                      <div class="image-div">
+                      <div class="image-div text-center">
                         <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 350, height: 200, crop: :pad) %>
                       </div>
                       <div class="elements-div">
@@ -180,9 +180,6 @@
             <% end %>
           </tbody>
         </table>
-        <% if @dashboard.pins.count > 1 %>
-          <div class="arrow-down"></div>
-        <% end %>
       </div>
       <div class='export-container'>
         <div class='dashboard-comment-view'>

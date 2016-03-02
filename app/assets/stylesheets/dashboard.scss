@@ -10,6 +10,8 @@
   border-spacing: 50px 0px;
   textarea {
     resize: none;
+    width: 90%;
+    // was 350px
   }
   .coltimeline {
   background-color: white;
@@ -29,7 +31,7 @@
   .colcomment {
     width: 350px;
     .comment-view {
-      width: 3ç50px;
+      width: 350px;
       background-color: #EEEEEE;
       font-style: italic;
       border-radius: 5px;
@@ -39,8 +41,8 @@
       background-color: #EEEEEE;
       border: none;
       font-style: italic;
-          padding-top: 30px;
-    margin-top: 80px;
+      padding-top: 20px;
+      margin-top: 80px;
 
     }
     .btn-save-comment {
@@ -103,16 +105,6 @@
 .lowerlinks-container {
   margin: 100px auto 0 auto;
   width: 300px;
-}
-
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-top: 100px solid #F9F9F9;
-  background-color: #F5F5F5;
-  margin: 0 auto;
 }
 
 #btn-send {
