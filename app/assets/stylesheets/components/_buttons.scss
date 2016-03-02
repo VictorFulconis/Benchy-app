@@ -1,3 +1,7 @@
+
+.btn {
+  outline: none;
+}
 .btn-conf {
   border-radius: 50px;
   margin-right: 15px;
@@ -5,6 +9,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 18px 28px 17px 28px;
+  outline: none;
   }
 
 .btn-conf-2 {
@@ -15,12 +20,14 @@
   text-transform: uppercase;
   padding: 12px;
   margin-top: 1em;
+  outline: none;
   }
 
 .btn-green {
   background: #2cd5c4;
   color: white;
   text-decoration: none;
+  outline: none;
 }
 
 .btn-download {
@@ -34,6 +41,7 @@
   background-color: #2cd5c4;
   border-color: #2cd5c4;
   transition: all 0.1s ease-in-out;
+  outline: none;
   &:hover {
     background-color: #56DDCE;
     border-color: #2cd5c4;

@@ -163,29 +163,30 @@
   border: 1px solid rgb(230, 230, 230);
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-  width: 500px;
-  height: 300px;
+  width: 375px;
+  height: 290px;
   background-color: white;
   transition: all 0.1s ease-in-out;
   &:hover {
     transform: scale(1.05);
   }
   .image-div {
-    margin-left: 10px;
+    padding: 12px;
     border-bottom: 0.5px dashed rgb(230, 230, 230);
   }
+
   .elements-div {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 90px;
-    width: 450px;
+    justify-content: space-between;
+    width: 350px;
+    padding-top: 15px;
+    padding-left: 15px;
     background-color: white;
   }
+
   .text-div {
     text-align: left;
-    width: 250px;
-    height: 90px;
+    width: 350px;
     background-color: white;
     p {
       font-size: 12px;
@@ -213,5 +214,4 @@
     }
   }
 }
-
 
