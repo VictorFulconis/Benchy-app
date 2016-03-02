@@ -17,18 +17,3 @@ class SharesController < ApplicationController
     params.require(:share).permit(:user_id, :dashboard_id)
   end
 end
-
-
-
-# class RestaurantsController < ApplicationController
-#   def create
-#     @restaurant = current_user.restaurants.build(restaurant_params)
-
-#     if @restaurant.save
-#       RestaurantMailer.creation_confirmation(@restaurant).deliver_now
-#       redirect_to restaurant_path(@restaurant)
-#     else
-#       render :new
-#     end
-#   end
-# end
