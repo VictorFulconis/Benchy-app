@@ -1,6 +1,7 @@
 class Share < ActiveRecord::Base
   belongs_to :user
   belongs_to :dashboard
+  after_create :send_welcome_email
 
   private
 

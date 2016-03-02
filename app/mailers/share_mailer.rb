@@ -4,7 +4,7 @@ class ShareMailer < ApplicationMailer
 
     mail(
       to:       @share.user.email,
-      subject:  "On vient de vous partager le tableau #{@share.dashboard.name} !"
+      subject:  "Whe just shared the #{@share.dashboard.name} dashboard with you!"
     )
   end
 end
