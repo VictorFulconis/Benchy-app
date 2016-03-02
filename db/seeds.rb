@@ -25,7 +25,6 @@ dashboard.save
 competitor = Competitor.new(
   name: "amazon",
   url: "www.amazon.fr",
-  scraping_parameters: ""
   )
 competitor.save
 follow = Follow.new(
@@ -43,7 +42,6 @@ end
 competitor = Competitor.new(
   name: "cdiscount",
   url: "www.cdiscount.fr",
-  scraping_parameters: ""
   )
 competitor.save
 follow = Follow.new(
@@ -61,7 +59,6 @@ end
 competitor = Competitor.new(
   name: "fnac",
   url: "www.fnac.com",
-  scraping_parameters: ""
   )
 competitor.save
 follow = Follow.new(
@@ -79,7 +76,6 @@ end
 competitor = Competitor.new(
   name: "priceminister",
   url: "www.priceminister.com",
-  scraping_parameters: ""
   )
 competitor.save
 follow = Follow.new(
@@ -138,7 +134,6 @@ dashboard.save
 competitor = Competitor.new(
   name: "amazon",
   url: "www.amazon.fr",
-  scraping_parameters: ""
   )
 competitor.save
 follow = Follow.new(
@@ -156,7 +151,6 @@ end
 competitor = Competitor.new(
   name: "cdiscount",
   url: "www.cdiscount.fr",
-  scraping_parameters: ""
   )
 competitor.save
 follow = Follow.new(
@@ -174,7 +168,6 @@ end
 competitor = Competitor.new(
   name: "fnac",
   url: "www.fnac.fr",
-  scraping_parameters: ""
   )
 competitor.save
 follow = Follow.new(
@@ -192,7 +185,6 @@ end
 competitor = Competitor.new(
   name: "priceminister",
   url: "www.priceminister.fr",
-  scraping_parameters: ""
   )
 competitor.save
 follow = Follow.new(

@@ -6,6 +6,6 @@ class Share < ActiveRecord::Base
   private
 
   def send_share_email
-    ShareMailer.creation_confirmation(share).deliver_now
+    ShareMailer.creation_confirmation(self).deliver_now
   end
 end
