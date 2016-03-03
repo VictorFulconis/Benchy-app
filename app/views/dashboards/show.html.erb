@@ -14,11 +14,11 @@
                 <tr>
                   <td class="colcard">
                     <div class="ad-card">
-<!--                       <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
+                      <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
- -->                      <div class="image-div text-center">
-                            <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
-                         </div>
+<!--                       <div class="image-div text-center">
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
+                      </div> -->
                       <div class="elements-div">
                       <h4><%= pin.ad.competitor.name.capitalize %></h4>
                           <!-- <h4><%= pin.ad.created_at.to_date %></h4> -->
@@ -67,9 +67,11 @@
                   </td>
                   <td class="colcard">
                     <div class="ad-card">
-                      <div class="image-div text-center">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
+                      <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
+<!--                       <div class="image-div text-center">
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
+                      </div> -->
                       <div class="elements-div">
                         <h4><%= pin.ad.competitor.name.capitalize %></h4>
                         <%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn" %>
@@ -117,9 +119,11 @@
                 <tr>
                   <td class="colcard">
                     <div class="ad-card">
-                      <div class="image-div">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
+                      <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
+<!--                       <div class="image-div">
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
+                      </div> -->
                       <div class="elements-div">
                         <h4><%= pin.ad.competitor.name.capitalize %></h4>
                         <div class="unpin-btn-placeholder"></div>
@@ -165,9 +169,11 @@
                   </td>
                   <td class="colcard">
                     <div class="ad-card">
-                      <div class="image-div">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
+                      <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
+<!--                       <div class="image-div">
+                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
+                      </div> -->
                       <div class="elements-div">
                         <h4><%= pin.ad.competitor.name.capitalize %></h4>
                       </div>
