@@ -24,9 +24,15 @@ class DashboardsController < ApplicationController
 
   def update
     if @dashboard.update(dashboard_params)
-      redirect_to dashboard_path(@dashboard)
+      respond_to do |format|
+        format.html { redirect_to dashboard_path(@dashboard) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.js  # <-- idem
+      end
     end
   end
 

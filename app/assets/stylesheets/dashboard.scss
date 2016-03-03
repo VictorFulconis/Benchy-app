@@ -60,7 +60,7 @@
 
 
   .btn-save-comment {
-  outline: none;
+    outline: none;
   }
 
   .colarrow1, .colarrow2 {
@@ -131,4 +131,9 @@
 .elements-div h4 {
   font-weight: bold;
   // opacity: 0.8
+}
+
+#btn-save-main-comment {
+  // visibility: hidden;
+  display: none
 }
