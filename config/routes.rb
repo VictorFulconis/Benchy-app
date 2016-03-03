@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   require "sidekiq/web"
   require 'sidekiq-scheduler/web'
-  authenticate :user, lambda { |u| u.email == 'admin@benchy.com' } do
+  authenticate :user, lambda { |u| u.email == 'hello@benchy.me' } do
     mount Sidekiq::Web => '/sidekiq'
   end
 
