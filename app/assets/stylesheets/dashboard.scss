@@ -47,7 +47,7 @@
       font-style: italic;
       padding-top: 20px;
       margin-top: 80px;
-
+      opacity: 0.6;
     }
     .btn-save-comment {
       visibility: hidden;
@@ -116,4 +116,19 @@
   outline: none;
 }
 
+// .timebubble {
+//   opacity: 0.8;
+// }
 
+.form-control {
+  opacity: 0.6;
+}
+
+.select2-selection__rendered {
+  opacity: 0.6;
+}
+
+.elements-div h4 {
+  font-weight: bold;
+  // opacity: 0.8
+}
