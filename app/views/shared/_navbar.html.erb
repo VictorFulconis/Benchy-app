@@ -12,17 +12,8 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-    <!-- Search form -->
-      <!-- <form action="" class="navbar-wagon-search">
-        <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-        <button type="submit" class="navbar-wagon-search-btn">
-          <i class="fa fa-search"></i>
-        </button>
-      </form> -->
       <% if current_page?(controller: 'ads', action: 'index') %>
         <div class="search-bar">
           <div class="form-inline">
@@ -34,9 +25,10 @@
             <% end %>
           </div>
         </div>
-      <% else %>
-        <%= link_to t(".dashboards", default: "My dashboards"), user_path(current_user), class: "navbar-wagon-item navbar-wagon-button btn" %>
       <% end %>
+    <% unless current_page?(controller: 'users', action: 'show', id: current_user.id) %>
+      <%= link_to t(".dashboards", default: "My dashboards"), user_path(current_user), class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% end %>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
