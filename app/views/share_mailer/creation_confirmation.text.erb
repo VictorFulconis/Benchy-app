@@ -1,8 +1,8 @@
 There is something for you...
 
-Hi <%= @share.user.first_name %>,
+Hi <%= @share.user.first_name.capitalize %>,
 
-<%= @share.dashboard.user.first_name %> <%= @share.dashboard.user.last_name %> just shared the dashboard "<%= @share.dashboard.name %>" with you.
+<%= @share.dashboard.user.first_name.capitalize %> <%= @share.dashboard.user.last_name.capitalize %> just shared the dashboard "<%= @share.dashboard.name.capitalize %>" with you.
 
 Please click on the link below to access it:
 <%= dashboard_url(@share.dashboard) %>

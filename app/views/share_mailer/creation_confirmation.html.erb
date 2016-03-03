@@ -1,10 +1,10 @@
 <h1>There is something for you...</h1>
 
 <p>
-  Hi <%= @share.user.first_name %>,
+  Hi <%= @share.user.first_name.capitalize %>,
 </p>
 <p>
-  <%= @share.dashboard.user.first_name %> <%= @share.dashboard.user.last_name %> just shared the dashboard "<%= @share.dashboard.name %>" with you.
+  <%= @share.dashboard.user.first_name.capitalize %> <%= @share.dashboard.user.last_name.capitalize %> just shared the dashboard "<%= @share.dashboard.name.capitalize %>" with you.
   Please click on the link below to access it:
   <%= link_to dashboard_url(@share.dashboard), dashboard_url(@share.dashboard) %>
 
