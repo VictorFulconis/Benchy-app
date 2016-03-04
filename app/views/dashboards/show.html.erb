@@ -13,16 +13,14 @@
               <% if @count%2 != 0 %>
                 <tr>
                   <td class="colcard">
-                    <div class="ad-card">
+                    <div class="ad-card" data-toggle="modal" data-target="#ad-detail<%= @count %>">
                       <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
-<!--                       <div class="image-div text-center">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
-                      </div> -->
                       <div class="elements-div">
                       <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                          <!-- <h4><%= pin.ad.created_at.to_date %></h4> -->
-                        <%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn"  %>
+                        <%= link_to pin_path(pin), method: "delete", class: "btn unpin-btn" do  %>
+                          <i class="fa fa-minus"></i>
+                        <% end %>
                       </div>
                     </div>
                   </td>
@@ -66,26 +64,34 @@
                     <i class="fa fa-angle-left"></i>
                   </td>
                   <td class="colcard">
-                    <div class="ad-card">
+                    <div class="ad-card" data-toggle="modal" data-target="#ad-detail<%= @count %>">
                       <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
-<!--                       <div class="image-div text-center">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
-                      </div> -->
                       <div class="elements-div">
                         <h4><%= pin.ad.competitor.name.capitalize %></h4>
-                        <%= link_to "-", pin_path(pin), method: "delete", class: "btn unpin-btn" %>
+                        <%= link_to pin_path(pin), method: "delete", class: "btn unpin-btn" do  %>
+                          <i class="fa fa-minus"></i>
+                        <% end %>
                       </div>
                     </div>
                   </td>
                 </tr>
               <% end %>
+              <div class="modal fade" id="ad-detail<%= @count %>">
+                <div class="ad-card-modal">
+                  <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
+                  </div>
+                  <div class="elements-div">
+                    <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                    <%= link_to pin_path(pin), method: "delete", class: "btn unpin-btn" do  %>
+                      <i class="fa fa-minus"></i>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
             <% end %>
           </tbody>
         </table>
-        <% if @dashboard.pins.count > 1 %>
-          <div class="arrow-down"></div>
-        <% end %>
       </div>
       <div class='export-container'>
         <div class='dashboard-comment'>
@@ -118,12 +124,9 @@
               <% if @count%2 != 0 %>
                 <tr>
                   <td class="colcard">
-                    <div class="ad-card">
+                    <div class="ad-card" data-toggle="modal" data-target="#ad-detail<%= @count %>">
                       <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
-<!--                       <div class="image-div">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
-                      </div> -->
                       <div class="elements-div">
                         <h4><%= pin.ad.competitor.name.capitalize %></h4>
                         <div class="unpin-btn-placeholder"></div>
@@ -141,7 +144,7 @@
                   <td class="colarrow2">
                   </td>
                   <td class="colcomment">
-                    <% if pin.comment %>
+                    <% if pin.comment && pin.comment != "" %>
                       <div class="comment-view">
                         <p><%= pin.comment %></p>
                       </div>
@@ -151,7 +154,7 @@
               <% else %>
                 <tr>
                   <td class="colcomment">
-                    <% if pin.comment %>
+                    <% if pin.comment && pin.comment != "" %>
                       <div class="comment-view">
                         <p><%= pin.comment %></p>
                       </div>
@@ -168,12 +171,9 @@
                     <i class="fa fa-angle-left"></i>
                   </td>
                   <td class="colcard">
-                    <div class="ad-card">
+                    <div class="ad-card" data-toggle="modal" data-target="#ad-detail<%= @count %>">
                       <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
                       </div>
-<!--                       <div class="image-div">
-                        <%= cl_image_tag(pin.ad.cloudinary_public_id, width: 325, height: 200, crop: :pad) %>
-                      </div> -->
                       <div class="elements-div">
                         <h4><%= pin.ad.competitor.name.capitalize %></h4>
                       </div>
@@ -183,6 +183,15 @@
                   </td>
                 </tr>
               <% end %>
+              <div class="modal fade" id="ad-detail<%= @count %>">
+                <div class="ad-card-modal">
+                  <div class="image-div" style="background-image: url('<%= cloudinary_url(pin.ad.cloudinary_public_id) %>')">
+                  </div>
+                  <div class="elements-div">
+                    <h4><%= pin.ad.competitor.name.capitalize %></h4>
+                  </div>
+                </div>
+              </div>
             <% end %>
           </tbody>
         </table>
