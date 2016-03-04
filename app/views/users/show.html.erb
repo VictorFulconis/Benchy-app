@@ -78,7 +78,7 @@
                       <% end %>
                       <div class="elements-div text-center ">
                         <div class="text-div">
-                          <h4><%= dashboard.name.capitalize %></h4>
+                          <h4><%= dashboard.name %></h4>
                           <div class="dashboard-link">
                             <%= link_to dashboard_path(dashboard), method: "get" do %>
                               <i class="fa fa-eye dashboard-icons"></i>
@@ -103,7 +103,7 @@
                       <% end %>
                       <div class="elements-div text-center ">
                         <div class="text-div">
-                          <h4><%= dashboard.name.capitalize %></h4>
+                          <h4><%= dashboard.name %></h4>
                           <div class="dashboard-link">
                             <%= link_to dashboard_path(dashboard), method: "get" do %>
                               <i class="fa fa-eye dashboard-icons"> from: <%= dashboard.user.first_name %></i>

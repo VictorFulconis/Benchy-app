@@ -14,6 +14,14 @@
   margin-bottom: 1em;
 }
 
+#new_pin {
+  .btn-default {
+    outline: none;
+  }
+  .btn-success {
+    outline: none;
+  }
+}
 .pin-list{
    display: flex;
   vertical-align: middle;
