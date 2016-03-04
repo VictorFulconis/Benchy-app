@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" class="<%= "#{params[:controller]}-#{params[:action]}" %>">
   <head>
-    <title>Benchy</title>
-    <%= csrf_meta_tags %>
-    <meta name="description" content="Benchy helps you follow easily your competitors' marketing operations">
+    <title>meta_title</title>
+    <!-- <%= csrf_meta_tags %> -->
+    <meta name="description" content="<%= meta_description %>">
 
-    <meta property="og:title" content="Benchy - your easy competition monitoring tool">
-    <meta property="og:image" content="assets/images/favicon.ico">
-    <meta property="og:description" content="Benchy is a tool that helps follow easily your competitors' marketing operations">
-    <meta property="og:site_name" content="Benchy"/>
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= image_url(meta_image) %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META[:twitter_account] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META[:twitter_account] %>">
+    <meta name="twitter:image:src" content="<%= image_url(meta_image) %>">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,3 +44,21 @@
 </html>
 
 
+<title><%= meta_title %></title>
+<meta name="description" content="<%= meta_description %>">
+
+<!-- Facebook Open Graph data -->
+<meta property="og:title" content="<%= meta_title %>" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<%= request.original_url %>" />
+<meta property="og:image" content="<%= image_url(meta_image) %>" />
+<meta property="og:description" content="<%= meta_description %>" />
+<meta property="og:site_name" content="<%= meta_title %>" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="<%= DEFAULT_META[:twitter_account] %>">
+<meta name="twitter:title" content="<%= meta_title %>">
+<meta name="twitter:description" content="<%= meta_description %>">
+<meta name="twitter:creator" content="<%= DEFAULT_META[:twitter_account] %>">
+<meta name="twitter:image:src" content="<%= image_url(meta_image) %>">
